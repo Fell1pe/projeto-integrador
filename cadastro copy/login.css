@@ -145,7 +145,15 @@ legend {
 
 #cadastroo {
     font-family: poppins, sans-serif; /* define fonte */
-    button-style: none; /* diz que não haverá estilo de botão */
+    border: none;
+    background-color: none; /* adiciona cor ao fundo */
+    color: black; /* adiciona cor a fonte */
+    padding: 10px; /* adiciona espaçamento */
+    font-size: 10px; /* define tamanho */
+    border-radius: 5px; /* define quantidade de curva lateral da borda */
+    font-weight: bold; /* reforça e da grossura aos caractéries */
+    transition: background-color 0.3s, transform 0.3s; /* adiciona transição */
+    margin-bottom: 10px; /* adiciona espaçamento abaixo do botão */
 }
 
 #login_button {
