@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Cadastro</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel='stylesheet' type='text/css' media='screen' href='login.css'>
+</head>
+<body>
+    <main id="container"> <!-- Cria main com id container para fazer a base para resto da estrutura -->
+        <form id="login_form"> 
+            <!-- Cria iniício do formulário -->
+            <div id="form_header">
+                <!-- Adiciona div do cabeçalho do formulário -->
+                <h1>login</h1>
+                <i id="mode_icon" class="fa-solid fa-moon"></i> <!-- adiciona icone da mudança de modo claro e noturno -->
+            </div>
+            <div id="social_media">
+                <!-- adiciona divisória para medias sociais -->
+                <a href="#">
+                    <img src="img/facebook-logo.png" alt="facebook-logo">
+                </a>
+                <a href="#">
+                    <img src="img/google-logo.png" alt="google-logo">
+                </a>
+                <a href="#">
+                    <img src="img/github.png" alt="github">
+                </a>
+                <!-- adiciona imagens para melhor compreensão -->
+            </div>
+
+            <fieldset>
+                <!-- adiciona elemento para criar sub campo ou separação dentro do formulário, como forma de agrupar elementos -->
+                <legend>Informações Pessoais</legend> <!-- adicona legenda ao fieldset -->
+                <div id="inputs">
+
+                    <div class="input-box">
+                        <label for="Email">
+                            Email
+                            <div class="input-field">
+                                <i class="fa-solid fa-envelope"></i><!-- adiciona icone -->
+                                <input type="email" id="Email" name="Email" placeholder="seuemail@exemplo.com" required><!-- adiciona input com descrição para usuário inserir as informações --> 
+                            </div>
+                        </label>
+                        <!-- adiciona campo para preencher email do usuário -->
+                    </div>
+
+                    <div class="input-box">
+                        <label for="password">
+                            Senha
+                            <div class="input-field">
+                                <i class="fa-solid fa-key"></i><!-- adiciona icone -->
+                                <input type="password" id="password" name="password" placeholder="Sua senha" required> <!-- adiciona input com descrição para usuário inserir as informações -->
+                            </div>
+                        </label>
+                        <!-- adiciona campo para preencher nsenha do usuário -->
+                    </div>
+
+            </fieldset>
+
+
+            <button id="cadastroo" href="/cadastro/cadastrar.html">Cadastrar</button>
+
+            <button type="submit" id="login_button">
+                login
+            </button>
+        </form>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.14.2/dist/sweetalert2.all.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

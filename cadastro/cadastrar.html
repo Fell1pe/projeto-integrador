@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Cadastro</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+</head>
+<body>
+    <main id="container"> <!-- Cria main com id container para fazer a base para resto da estrutura -->
+        <form id="login_form"> 
+            <!-- Cria iniício do formulário -->
+            <div id="form_header">
+                <!-- Adiciona div do cabeçalho do formulário -->
+                <h1>Cadastro</h1>
+                <i id="mode_icon" class="fa-solid fa-moon"></i> <!-- adiciona icone da mudança de modo claro e noturno -->
+            </div>
+            <div id="social_media">
+                <!-- adiciona divisória para medias sociais -->
+                <a href="#">
+                    <img src="img/facebook-logo.png" alt="facebook-logo">
+                </a>
+                <a href="#">
+                    <img src="img/google-logo.png" alt="google-logo">
+                </a>
+                <a href="#">
+                    <img src="img/github.png" alt="github">
+                </a>
+                <!-- adiciona imagens para melhor compreensão -->
+            </div>
+
+            <fieldset>
+                <!-- adiciona elemento para criar sub campo ou separação dentro do formulário, como forma de agrupar elementos -->
+                <legend>Informações Pessoais</legend> <!-- adicona legenda ao fieldset -->
+                <div id="inputs">
+                    <div class="input-box">
+                        <label for="name">
+                            Nome
+                            <div class="input-field">
+                                <i class="fa-solid fa-user"></i><!-- adiciona icone -->
+                                <input type="text" id="name" name="name" placeholder="Seu nome completo" required> <!-- adiciona input com descrição para usuário inserir as informações -->
+                            </div>
+                        </label>
+                        <!-- adiciona campo para preencher nome do usuário -->
+                    </div>
+
+                    <div class="input-box">
+                        <label for="Email">
+                            Email
+                            <div class="input-field">
+                                <i class="fa-solid fa-envelope"></i><!-- adiciona icone -->
+                                <input type="email" id="Email" name="Email" placeholder="seuemail@exemplo.com" required><!-- adiciona input com descrição para usuário inserir as informações --> 
+                            </div>
+                        </label>
+                        <!-- adiciona campo para preencher email do usuário -->
+                    </div>
+
+                    <div class="input-box">
+                        <label for="password">
+                            Senha
+                            <div class="input-field">
+                                <i class="fa-solid fa-key"></i><!-- adiciona icone -->
+                                <input type="password" id="password" name="password" placeholder="Sua senha" required> <!-- adiciona input com descrição para usuário inserir as informações -->
+                            </div>
+                        </label>
+                        <!-- adiciona campo para preencher nsenha do usuário -->
+                    </div>
+
+                    <div class="input-box">
+                        <label for="CPF">
+                            CPF
+                            <div class="input-field">
+                                <i class="fa-solid fa-id-card"></i><!-- adiciona icone -->
+                                <input type="text" id="CPF" name="CPF" maxlength="11" placeholder="000.000.000-00" required><!-- adiciona input com descrição para usuário inserir as informações --> 
+                            </div>
+                        </label>
+                        <!-- adiciona campo para preencher CPF do usuário -->
+                    </div>
+
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <!-- adiciona elemento para criar sub campo ou separação dentro do formulário, como forma de agrupar elementos -->
+                <legend>Endereço</legend>
+                <!-- adicona legenda ao fieldset -->
+                <div id="inputs">
+                    <div class="input-box">
+                        <label for="CEP">
+                            CEP
+                            <div class="input-field">
+                                <i class="fa-solid fa-map-pin"></i><!-- adiciona icone -->
+                                <input type="text" id="CEP" name="CEP" maxlength="8" placeholder="00000-000" required> <!-- adiciona input com descrição para usuário inserir as informações -->
+                            </div>
+                        </label>
+                        <!-- adiciona campo para preencher CEP do usuário -->
+                    </div>
+
+                    <div class="input-box">
+                        <label for="rua">
+                            Rua
+                            <div class="input-field">
+                                <i class="fa-solid fa-road"></i><!-- adiciona icone -->
+                                <input type="text" id="rua" name="rua" placeholder="Nome da rua" required> <!-- adiciona input com descrição para usuário inserir as informações -->
+                            </div>
+                        </label>
+                        <!-- adiciona campo para preencher Rua do usuário -->
+                    </div>
+
+                    <div class="input-box">
+                        <label for="numero">
+                            Número
+                            <div class="input-field">
+                                <i class="fa-solid fa-hashtag"></i><!-- adiciona icone -->
+                                <input type="text" id="numero" name="numero" placeholder="Número da residência" required> <!-- adiciona input com descrição para usuário inserir as informações -->
+                            </div>
+                        </label>
+                        <!-- adiciona campo para preencher número do usuário -->
+                    </div>
+
+                    <div class="input-box">
+                        <label for="bairro">
+                            Bairro
+                            <div class="input-field">
+                                <i class="fa-solid fa-city"></i><!-- adiciona icone -->
+                                <input type="text" id="bairro" name="bairro" placeholder="Nome do bairro" required> <!-- adiciona input com descrição para usuário inserir as informações -->
+                            </div>
+                        </label>
+                        <!-- adiciona campo para preencher Bairro do usuário -->
+                    </div>
+
+                    <div class="input-box">
+                        <label for="complemento">
+                            Complemento
+                            <div class="input-field">
+                                <i class="fa-solid fa-building"></i><!-- adiciona icone -->
+                                <input type="text" id="complemento" name="complemento" placeholder="Apto, bloco, etc."> <!-- adiciona input com descrição para usuário inserir as informações -->
+                            </div>
+                        </label>
+                        <!-- adiciona campo para preencher complemento para melhor exeriência do usuário -->
+                    </div>
+
+                    <div class="input-box">
+                        <label for="cidade">
+                            Cidade
+                            <div class="input-field">
+                                <i class="fa-solid fa-city"></i><!-- adiciona icone -->
+                                <input type="text" id="cidade" name="cidade" placeholder="Nome da cidade" required> <!-- adiciona input com descrição para usuário inserir as informações -->
+                            </div>
+                        </label>
+                        <!-- adiciona campo para preencher cidade do usuário -->
+                    </div>
+
+                    <div class="input-box">
+                        <label for="estado">
+                            Estado
+                            <div class="input-field">
+                                <i class="fa-solid fa-globe"></i><!-- adiciona icone -->
+                                <input type="text" id="estado" name="estado" placeholder="Estado" required> <!-- adiciona input com descrição para usuário inserir as informações -->
+                            </div>
+                        </label>
+                        <!-- adiciona campo para preencher Estado do usuário -->
+                    </div>
+                </div>
+            </fieldset>
+
+            <button type="submit" id="login_button">
+                Cadastrar
+            </button>
+        </form>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.14.2/dist/sweetalert2.all.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
