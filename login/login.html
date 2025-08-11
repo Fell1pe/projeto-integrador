@@ -9,16 +9,14 @@
     <link rel='stylesheet' type='text/css' media='screen' href='login.css'>
 </head>
 <body>
-    <main id="container"> <!-- Cria main com id container para fazer a base para resto da estrutura -->
-        <form id="login_form"> 
-            <!-- Cria iniício do formulário -->
+    <main id="container">
+        <form id="login_form">
             <div id="form_header">
-                <!-- Adiciona div do cabeçalho do formulário -->
-                <h1>login</h1>
-                <i id="mode_icon" class="fa-solid fa-moon"></i> <!-- adiciona icone da mudança de modo claro e noturno -->
+                <h1>Login</h1>
+                <i id="mode_icon" class="fa-solid fa-moon"></i>
             </div>
+
             <div id="social_media">
-                <!-- adiciona divisória para medias sociais -->
                 <a href="#">
                     <img src="img/facebook-logo.png" alt="facebook-logo">
                 </a>
@@ -28,46 +26,46 @@
                 <a href="#">
                     <img src="img/github.png" alt="github">
                 </a>
-                <!-- adiciona imagens para melhor compreensão -->
             </div>
 
             <fieldset>
-                <!-- adiciona elemento para criar sub campo ou separação dentro do formulário, como forma de agrupar elementos -->
-                <legend>Informações Pessoais</legend> <!-- adicona legenda ao fieldset -->
+                <legend>Informações Pessoais</legend>
                 <div id="inputs">
-
                     <div class="input-box">
                         <label for="Email">
                             Email
                             <div class="input-field">
-                                <i class="fa-solid fa-envelope"></i><!-- adiciona icone -->
-                                <input type="email" id="Email" name="Email" placeholder="seuemail@exemplo.com" required><!-- adiciona input com descrição para usuário inserir as informações --> 
+                                <i class="fa-solid fa-envelope"></i>
+                                <input type="email" id="Email" name="Email" placeholder="seuemail@exemplo.com" required>
                             </div>
                         </label>
-                        <!-- adiciona campo para preencher email do usuário -->
                     </div>
 
                     <div class="input-box">
                         <label for="password">
                             Senha
                             <div class="input-field">
-                                <i class="fa-solid fa-key"></i><!-- adiciona icone -->
-                                <input type="password" id="password" name="password" placeholder="Sua senha" required> <!-- adiciona input com descrição para usuário inserir as informações -->
+                                <i class="fa-solid fa-key"></i>
+                                <input type="password" id="password" name="password" placeholder="Sua senha" required>
                             </div>
                         </label>
-                        <!-- adiciona campo para preencher nsenha do usuário -->
                     </div>
-
+                </div>
             </fieldset>
 
-
-            <p id="cadastroo" href="/cadastro/cadastrar.html">Cadastrar</p>
-
             <button type="submit" id="login_button">
-                login
+                Login
             </button>
+
+            <div style="text-align: center; margin-top: 10px;">
+                <a href="/cadastro/cadastrar.html" id="cadastroo">Cadastrar-se</a><br>
+                <a href="/esqueci/esqueci.html" style="font-size: 12px; color: gray; text-decoration: none;">
+                    Esqueci minha senha
+                </a>
+            </div>
         </form>
     </main>
+
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.14.2/dist/sweetalert2.all.min.js"></script>
     <script src="script.js"></script>
 </body>
