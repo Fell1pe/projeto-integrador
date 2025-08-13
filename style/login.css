@@ -1,0 +1,213 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400&display=swap");
+/* importa fonte via url */
+:root {
+  --color-light-50: #F0EBD1;
+  --color-dark-50: #BAAF95;
+  --color-dark-100: #312d37;
+  --color-dark-900: #241B18;
+  --color-purple-50: #730000;
+  --color-gradient: linear-gradient(0deg, var(--color-purple-50));
+} /* pré define cores usadas no css */
+* {
+  font-family: "Poppins", sans-serif; /* adiciona fonte na base do arquivo */
+  margin: 0; /* zera margem da página */
+  padding: 0; /* tira todo possível espaçamento no código */
+  box-sizing: border-box; /* zera todas as predefinições de tamanho */
+} /* aplica formatação do site  */
+#container {
+  min-height: 100vh; /* adiciona tamanho mínimo ao container */
+  width: 100%; /* adiciona um tamanho ao container */
+  background: var(--color-purple-50); /* adiciona cor de fundo */
+  display: flex; /* adiciona customização de display = flex sendo mais customizavel */
+  align-items: center; /* alinha todos os itens presentes no container no centro */
+  justify-content: center; /* centraiza container no meio da página */
+  padding: 20px; /* adiciona espaçamento entre itens dentro do container */
+} /* id empregado ao arquivo main(corpo principal onde sera empregado todos os demais itens do formulário) */
+#login_form {
+  background-color: var(--color-light-50); /* adiciona cor de fundo */
+  display: flex; /* adiciona customização de display = flex */
+  flex-direction: column; /* da característica ao display flex */
+  padding: 30px 40px; /* adiciona separação entre elementos internos - caixas de preenchimento de formulário  */
+  border-radius: 8px; /* adiciona curvas a estrtura do formulário */
+  gap: 30px; /* implementa uma espécie de separação entre os elementos do código */
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /* adiciona locais de sombra na base do formulário */
+  max-width: 800px; /* define um tamanho máximo para a base do formulário */
+  width: 100%; /* defie tamanho da base do formulário */
+  animation: dark-to-light 0.3s ease-in-out; /* implementa animação de troca de modo de cor */
+} /* puxa customuização do id do form */
+#form_header {
+  display: flex; /* adiciona customização de display = flex */
+  align-items: center; /* alinha itens do cabeçalho do formulário */
+  justify-content: space-between; /* define tipo de espaçamento entre elementos */
+} /* id do cabeçalho do formulário */
+#form_header h1 {
+  font-size: 32px; /* define tamanho da fonte */
+  position: relative; /* define valor da posição do H1 onde ele é relativo aquele que é absoluto */
+} /* id do cabeçalho do formulário para modificar apenas o H1 */
+#form_header h1::before {
+  position: absolute; /* define valor absoluto ao elemento */
+  content: "";
+  width: 50%; /* define tamanho ao elemento */
+  background-color: var(--color-purple-50); /* adiciona cor ao fundo */
+  height: 3px; /* define largura do elemento */
+  bottom: 3px; /* define distância */
+  left: -10px; /* define distância do elemento para a esquerda  */
+  border-radius: 5px; /* adiciona valor de bordas ao elemento */
+} /* id do cabeçalho do formulário para modificar apenas o H1 antes obs- trassado embaixo do cadastro */
+#form_header img {
+  width: 40px; /* define tamanho do logo */
+  height: auto; /* define tamanho do logo */
+  position: relative; /* define valor absoluto ao elemento */
+  left: -4rem; /* define distância do logo para a esquerda */
+}
+
+#mode_icon {
+  cursor: pointer; /* define elemento para trocar o cursor quando passar por cima do elemento */
+  font-size: 24px; /* define tamanho */
+  color: var(--color-purple-50); /* define cor ao elemento */
+} /* modifica icone da troca de cor via id */
+#social_media {
+  display: flex; /* adiciona customização de display = flex */
+  justify-content: center; /* define posição dos elementos */
+  gap: 20px; /* implementa uma espécie de separação entre os elementos do código */
+} /* puxa id das redes sociais */
+#social_media img {
+  width: 40px; /* define tamanho das imagens */
+  transition: transform 0.3s; /* adiciona animação de transform e define tempo da transição*/
+} /* puxa id das redes sociais modificando apenas as imagens */
+#social_media img:hover {
+  transform: scale(1.2); /* define aumento da imagen durante transição */
+} /* puxa id das redes sociais modificando apenas as imagens na transição*/
+fieldset {
+  /* sub campo dentro do main */
+  border: 1px solid var(--color-dark-50); /* define espessura da borda colocando valoe solido e coloração */
+  border-radius: 20px; /* define quantidade de curva lateral da borda */
+  padding: 20px; /* define distância entre a borda e os demais objetos presentes dentro do campo */
+}
+
+legend {
+  padding: 0 10px; /* adiciona distância entre a legenda e a borda do fieldset */
+  font-weight: bold; /* adiciona grossura a fonte */
+  color: var(--color-dark-100); /* adiciona cor a fonte */
+}
+
+#inputs {
+  display: flex; /* adiciona customização de display = flex */
+  flex-wrap: wrap; /* define tipo de modificação flex no arquivo */
+  gap: 20px; /* implementa uma espécie de separação entre os elementos do código */
+} /* id da div das caixas */
+.input-box {
+  flex: 1 1 45%; /* define caracteríssticas específicas com proporção das caixas */
+  display: flex; /* adiciona customização de display = flex */
+  flex-direction: column; /* define uso do display flex */
+} /* id da div das caixas dentro das caixar */
+.input-box label {
+  font-size: 14px; /* define tamanho do label */
+  color: var(--color-dark-50); /* define cor */
+  margin-bottom: 5px; /* define uma margem entre o botão */
+} /* id da div das caixas dentro das caixar, modificando apenas o label */
+.input-field {
+  display: flex; /* adiciona customização de display = flex */
+  align-items: center; /* alinha itens do cabeçalho do formulário */
+  gap: 10px; /* implementa uma espécie de separação entre os elementos do código */
+  padding: 8px; /* adiciona espaçamento */
+  border: 1px solid var(--color-dark-50); /* define borda ao input com coloração e tamanho definidos */
+  border-radius: 4px; /* define quantidade de curva lateral da borda */
+  background-color: #fff; /* adiciona cor ao fundo */
+  transition: border-color 0.3s; /* define transição no capo e tempo de duração */
+} /* id da div das caixas dentro das caixar */
+.input-field i {
+  font-size: 18px; /* define tamanho */
+  color: var(--color-purple-50); /* adiciona cor a fonte */
+} /* id da div das caixas dentro das caixar apenas nos ícones */
+.input-field input {
+  border: none; /* diz que não haverá borda */
+  background-color: transparent; /* adiciona cor ao fundo */
+  width: 100%; /* define tamanho */
+  font-size: 16px; /* define tamanho */
+} /* id da div das caixas dentro das caixar apenas no input */
+.input-field input:focus {
+  outline: none;
+  border-color: var(--color-purple-50); /* define cor da borda */
+} /* id da div das caixas dentro das caixar apenas no input*/
+#cadastroo {
+  font-family: poppins, sans-serif; /* define fonte */
+  border: none;
+  background-color: none; /* adiciona cor ao fundo */
+  color: black; /* adiciona cor a fonte */
+  padding: 10px; /* adiciona espaçamento */
+  font-size: 10px; /* define tamanho */
+  border-radius: 5px; /* define quantidade de curva lateral da borda */
+  font-weight: bold; /* reforça e da grossura aos caractéries */
+  transition: background-color 0.3s, transform 0.3s; /* adiciona transição */
+  margin-bottom: 10px; /* adiciona espaçamento abaixo do botão */
+}
+
+#login_button {
+  border: none;
+  background-color: var(--color-purple-50); /* adiciona cor ao fundo */
+  color: var(--color-light-50); /* adiciona cor a fonte */
+  padding: 12px; /* adiciona espaçamento */
+  font-size: 18px; /* define tamanho */
+  border-radius: 5px; /* define quantidade de curva lateral da borda */
+  font-weight: bold; /* reforça e da grossura aos caractéries */
+  cursor: pointer; /* adiciona mudança de pontero ao campo */
+  transition: background-color 0.3s, transform 0.3s; /* adiciona transição */
+}
+
+#login_button:hover {
+  background-color: var(--color-purple-50);
+  transform: scale(1.05);
+}
+
+#login_form.dark {
+  color: var(--color-light-50);
+  background-color: var(--color-dark-100);
+  animation: light-to-dark 0.3s ease-in-out;
+}
+
+#login_form.dark legend {
+  color: var(--color-light-50);
+}
+
+#login_form.dark .input-field {
+  border-color: var(--color-light-50);
+  background-color: var(--color-dark-100);
+}
+
+#login_form.dark .input-field input,
+#login_form.dark .input-field i {
+  color: var(--color-light-50);
+}
+
+#login_form.dark i {
+  color: var(--color-light-50);
+}
+
+/* adiciona animações de modo escuro */
+@keyframes dark-to-light {
+  from {
+    background-color: var(--color-dark-100);
+  }
+  to {
+    background-color: var(--color-light-50);
+  }
+}
+@keyframes light-to-dark {
+  from {
+    background-color: var(--color-light-50);
+  }
+  to {
+    background-color: var(--color-dark-100);
+  }
+}
+/* Responsividade */
+@media (max-width: 768px) {
+  #login_form {
+    padding: 20px;
+  }
+  .input-box {
+    flex: 1 1 100%;
+  }
+}/*# sourceMappingURL=login.css.map */
