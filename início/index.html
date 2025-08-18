@@ -3,35 +3,73 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>projeto integrador - orí</title>
+    <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    
+    <script src='main.js'></script>
 </head>
 <body>
-    <header id="cabecalho">
-        <ul id="menu">
-            <li><a href=""></a></li>
-            <li><a href=""></a></li>
-            <li><a href=""></a></li>
-            <li><a href=""></a></li>
-        </ul>
+    <header id="head">
+           <!-- aqui ficaram todos os itens a direita do cabeçalho -->
+    <div id="head_logo">
+        <!-- aqui ficara a logo e imagem do app -->
+       
+        <div id="head_items">
+                <!-- aqui ficarão todos os itens a direita do cabeçalho -->
+            
+                <div id="head_svg">
+                <!-- Aqui ficara a logo -->
+                </div>
+       
+            <H2>Orí</H2>
+        </div>
+
+        <div id="head_links">
+            <a href="">Início</a>
+            <a href="">Denúncia</a>
+            <a href="">Processos</a>
+            <a href="">Descubra</a>
+        </div>
+    </div>
+    <!-- lado esquerdo -->
+     <div id="nav_bar">
+        <!-- Barra de busca -->
+        <div id="search_bar">
+            <input type="text" placeholder="Pesquisar...">
+            <button type="submit">Buscar</button>
+        </div>
+        <!-- Botão de notificações -->
+        <div id="notification_button">
+            <button type="button">🔔</button>
+        </div>
+        <!-- Avatar do usuário -->
+        <div id="user_avatar">
+            <img src="avatar.png" alt="Avatar do Usuário">
+        </div>
+     </div>
     </header>
 
-    <main id="corpo">
-
-        <h1>Bem vindo ao Orí</h1>
-        <p>Por meio desse app queremos se sita confortável para fazer suas denúncias</p>
-
-
-
-
+    <div id="user">
+        <img class="user.img" src="user.png" alt="Usuário">
+        <span class="user.name"></span>
         
+        <!-- criar css dessa aba ems formato de pílula e com animação em evento de click -->
+
+        <!-- Criar as váriaveis js para essa aplicação -->
+        <div id="dropdown">
+            <!-- <button onclick=""></button> -->
+            <!-- <a href=""><button>Meu usuário</button></a> -->
+        </div>
+    </div>
+
+<!-- fazer css da aba de pesquisa -->
+    <div class="search">
+        <i id="search_icon"></i>
+        <h2 id="search_camp">pesquise</h2>
+    </div>
 
 
-    </main>
-        
 
-    <script src='main.js'></script>
+
 </body>
 </html>
