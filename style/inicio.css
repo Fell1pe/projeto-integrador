@@ -1,26 +1,27 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Faustina:ital,wght@0,300..800;1,300..800&family=Manrope:wght@200..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Faustina:ital,wght@0,300..800;1,300..800&display=swap");
 :root {
   --color-light-50: #F0EBD1;
   --color-dark-50: #BAAF95;
-  --color-dark-100: #312d37;
+  --color-dark-100: #624129;
   --color-dark-900: #241B18;
   --color-red-50: #730000;
 } /* pré define cores usadas no css */
 * {
   font-family: "Manrope", sans-serif; /* adiciona fonte na base do arquivo */
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  margin: 0; /* coloca margem da página como 0 */
+  padding: 0; /* coloca padding da página como 0 */
+  box-sizing: border-box; /* fomata o border box universal do projeto */
 }
 
 body {
   background-color: var(--color-dark-50); /* define a cor de fundo do body */
+  min-height: 100vh; /* define a altura mínima do body como 100% da altura da viewport */
 }
 
 #head {
-  background-color: var(--color-light-50);
+  background-color: var(--color-light-50); /* define a cor de fundo do cabeçalho */
   display: flex; /* adiciona customização de display = flex */
   justify-content: space-between; /* adiciona espaçamento entre os itens do flex */
   flex-direction: column; /* organiza os itens do flex em coluna */
@@ -35,8 +36,9 @@ body {
   border-radius: 0 20px 20px 0; /* adiciona borda arredondada ao cabeçalho */
   z-index: 1000; /* garante que o cabeçalho fique acima de outros elementos */
   transition: left 0.3s ease; /* adiciona uma transição suave para a propriedade left */
+  /* Ao passar o mouse sobre a barra lateral */
 }
-#head #head.hover {
+#head.hover {
   left: 0; /* coloca o header novamente como aba lateral visível */
 }
 #head #head_itens {
@@ -83,6 +85,9 @@ body {
   background-color: var(--color-dark-100); /* muda a cor de fundo ao passar o mouse */
   color: var(--color-dark-100); /* muda a cor do texto ao passar o mouse */
 }
+#head #head_itens #head_links a:hover i {
+  color: white; /* muda a cor do ícone ao passar o mouse */
+}
 #head #head_itens #head_links {
   display: flex; /* adiciona customização de display = flex */
   flex-direction: column; /* organiza os itens do flex em coluna */
@@ -120,50 +125,269 @@ body {
   align-items: center; /* alinha os itens do flex horizontalmente ao centro */
   justify-content: center; /* adiciona espaçamento entre os itens do flex */
   background-color: var(--color-red-50); /* define a cor de fundo */
+  opacity: 0.9; /* define a opacidade do container */
+  z-index: 0; /* define a ordem de empilhamento do elemento */
+  width: 100%; /* define a largura do container */
+  height: 40vh; /* define a altura do container */
+  transform: translateY(-20vh); /* desloca o container para baixo */
+  transition: opacity 1s ease-in 0.5s, transform 0.6s ease; /* adiciona transição suave para a opacidade e o deslocamento vertical */
+}
+#presentation.show {
+  opacity: 1; /* torna o container visível */
+  transform: translateY(0); /* remove o deslocamento vertical */
 }
 #presentation h1 {
   color: var(--color-dark-50); /* define a cor do texto */
+  z-index: 3; /* define a ordem de empilhamento do elemento */
+  position: relative; /* define a posição do elemento como relativa */
+  font-family: "Faustina", serif; /* define a fonte do título */
+  font-size: 20vh; /* define o tamanho da fonte do título */
+  width: 100%; /* define a largura do título */
+  font-weight: bold; /* define o peso da fonte do título */
+  text-align: center; /* alinha o texto do título ao centro */
+  left: 50%; /* centraliza o título horizontalmente */
+  transform: translateX(-50%) translateY(40vh); /* centraliza o título */
+  transition: opacity 1s ease-in 1s, transform 1s ease; /* adiciona transição suave */
 }
-#presentation h2 {
-  color: var(--color-light-50); /* define a cor do texto */
+#presentation h1.show {
+  opacity: 1; /* torna o título visível */
+  transform: translateX(-50%) translateY(12vh); /* centraliza o título */
 }
-#presentation img {
-  max-width: 100%; /* garante que a imagem não ultrapasse a largura do container */
-  width: 50px; /* define a largura da imagem */
-  height: auto; /* mantém a proporção da imagem */
+#presentation #footer_presentation {
+  position: absolute; /* fixa dentro da div */
+  left: 50%; /* centraliza */
+  transform: translateX(-50%); /* centraliza */
+  top: 20vh; /* define a posição do footer */
+  font-size: 10vh; /* define o tamanho da fonte do footer */
+  font-weight: bold; /* define o peso da fonte do footer */
+  align-items: center; /* alinha h2 e img lado a lado */
+  z-index: 2; /* define a ordem de empilhamento do elemento */
+}
+#presentation #footer_presentation h2 {
+  color: var(--color-red-50); /* define a cor do texto do título */
+  transform: translateY(1vh); /* desloca o título para baixo */
+  transition: opacity 1s ease-in 1.5s, transform 1s ease 1s; /* adiciona transição suave */
+}
+#presentation #footer_presentation h2.show {
+  transform: translateY(20vh); /* remove o deslocamento vertical */
+  opacity: 1; /* torna o título visível */
+}
+#presentation.hidden {
+  opacity: 0; /* torna o container invisível */
+  transform: translateY(-120px); /* desloca o container para cima */
+  transition: opacity 0.3s ease, transform 0.6s ease; /* adiciona transição suave */
+  pointer-events: none; /* desabilita interações com o container */
+}
+#presentation.retract #footer_presentation h2 {
+  transform: translateY(0);
+  transition: transform 0.4s ease, opacity 0.3s ease;
 }
 
 #search_bar {
   display: flex; /* adiciona customização de display = flex */
+  width: 100%; /* define a largura do container como 100% */
+  max-width: 70vh; /* define a largura máxima do container como 70vh */
   flex-direction: row; /* organiza os itens do flex em linha */
   align-items: center; /* alinha os itens do flex verticalmente ao centro */
-  position: absolute; /* define a posição do container como relativa */
-  top: 30px; /* define a distância do topo como 30px */
-  right: 40px; /* define a distância da direita como 60px */
+  position: absolute; /* define a posição do container como absoluta */
+  top: 70vh; /* define a distância do topo como 70vh */
+  left: 50%; /* centraliza o container horizontalmente */
+  transform: translateX(-50%); /* centraliza o container horizontalmente */
+  animation: slideIn 1s ease-out 0.8 both; /* adiciona animação de slide-in */
 }
-#search_bar input {
-  position: relative; /* define a posição do input como relativa */
+#search_bar.fixed {
+  position: absolute; /* fixa a barra de busca no topo da página */
+  top: 8vh; /* define a distância do topo como 3vh */
+  right: 13vh; /* define a distância da direita como 10vh */
+  left: auto; /* remove a centralização horizontal */
+  transform: none; /* remove a transformação */
+  width: 50vh; /* define a largura do container como 50vh */
+  max-width: 60vh; /* define a largura máxima do container como 60vh */
+  transition: all 1s ease; /* adiciona transição suave */
+}
+#search_bar .search_input {
+  width: 100%; /* define a largura do input como 100% do container */
+  padding: 20px 60px 20px 30px; /* adiciona padding ao input */
+  font-size: 18px; /* define o tamanho da fonte do input */
   border: none; /* remove a borda do input */
-  outline: none; /* remove o contorno do input */
-  font-size: 16px; /* define o tamanho da fonte do input */
-  padding: 10px; /* adiciona padding ao input */
-  width: 500px; /* define a largura do input */
-  border-radius: 20px; /* adiciona borda arredondada ao input */
+  border-radius: 50px; /* torna o input circular */
+  background-color: white; /* define a cor de fundo do input */
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.24); /* define a sombra do input */
+  transition: all 0.3s ease; /* adiciona transição suave */
 }
-#search_bar input ::-moz-placeholder {
-  opacity: 0.5; /* define a opacidade do placeholder */
-}
-#search_bar input ::placeholder {
-  opacity: 0.5; /* define a opacidade do placeholder */
+#search_bar .search_input:focus {
+  outline: none; /* remove o contorno padrão do input */
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2); /* adiciona um contorno personalizado ao input */
+  transform: translateY(-2px); /* desloca o input para cima */
 }
 #search_bar button {
   position: absolute; /* define a posição do botão como absoluta */
-  right: 20px; /* define a distância da direita como 20px */
+  right: 10px; /* define a distância da direita como 10px */
   top: 50%; /* centraliza verticalmente o botão */
   transform: translateY(-50%); /* ajusta a posição vertical do botão */
-  background-color: transparent; /* torna o fundo do botão transparente */
+  width: 50px; /* define a largura do botão */
+  height: 50px; /* define a altura do botão */
+  background: linear-gradient(50deg, #a55353 0%, var(--color-red-50) 100%); /* define um gradiente de fundo para o botão */
   border: none; /* remove a borda do botão */
-  cursor: pointer; /* muda o cursor para indicar que é clicável */
-  color: var(--color-dark-100); /* define a cor do ícone do botão */
-  opacity: 0.7; /* define a opacidade do ícone do botão */
+  border-radius: 50%; /* torna o botão circular */
+  color: rgb(0, 0, 0); /* define a cor do ícone do botão */
+  transition: all 0.3s ease; /* adiciona transição suave */
+}
+#search_bar button:hover {
+  cursor: pointer; /* muda o cursor ao passar o mouse */
+  transform: translateY(-50%) scale(1.1); /* aumenta o tamanho do botão ao passar o mouse */
+}
+
+/* define o espaço de rolagem */
+.scroll_space {
+  height: 80vh; /* pode aumentar ou diminuir */
+  width: 100%; /* ocupa a largura toda */
+  background: transparent; /* só pra garantir que não polua o layout */
+}
+.scroll_space.hidden {
+  display: none; /* esconde o elemento */
+}
+
+/*este campo é uma maneira de esconder o presentation em forma de uma class*/
+.homepage {
+  display: none; /* adiciona customização de display = none, deixando o container invisível */
+  visibility: hidden; /* esconde o container inicialmente */
+  opacity: 0; /* define a opacidade inicial como 0 */
+  transform: translateY(50px); /* desloca o container para baixo */
+  transition: opacity 0.8s ease, transform 0.8s ease; /* adiciona transição */
+}
+.homepage.visible {
+  display: block; /* torna o container visível */
+  visibility: visible; /* torna o container visível */
+  opacity: 1; /* define a opacidade como 1 */
+  transform: translateY(0); /* remove o deslocamento */
+}
+.homepage .user {
+  position: absolute; /* fixa a div do usuário na tela */
+  top: -32vh; /* mesma altura da search_bar */
+  left: 13vh; /* lado oposto da search_bar */
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: white;
+  padding: 5px 16px;
+  border-radius: 50px; /* formato de pílula */
+  cursor: pointer;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.24);
+  transform: translateX(-50vh);
+  opacity: 0;
+  /* Balão de opções oculto inicialmente */
+  /* Quando clicar, mostra o balão */
+}
+.homepage .user.show_user {
+  opacity: 1;
+  transition: all 1s ease;
+  transform: translateX(0);
+}
+.homepage .user .avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.homepage .user span {
+  font-family: "Manrope", sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+  opacity: 0.9;
+}
+.homepage .user .dropdown {
+  position: absolute;
+  top: 100%;
+  right: -70px;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 50px;
+  padding: 0 20px;
+  gap: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  min-width: 200px;
+  z-index: 1000;
+  transition: all 0.3s ease-in-out;
+}
+.homepage .user .dropdown a, .homepage .user .dropdown button {
+  display: block;
+  text-decoration: none;
+  color: var(--color-dark-900);
+  font-weight: bold;
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 5px 10px;
+  border-radius: 20px;
+  transition: background 1s ease;
+}
+.homepage .user .dropdown a:hover, .homepage .user .dropdown button:hover {
+  background-color: var(--color-light-50);
+}
+.homepage .user.active .dropdown {
+  opacity: 1;
+  pointer-events: auto;
+  max-height: 500px;
+  padding: 10px 20px;
+}
+.homepage .bottons_navegate {
+  position: relative; /* posiciona a barra de botões */
+  top: -8vh;
+  display: flex; /* organiza os itens em linha */
+  flex-direction: row;
+  gap: 50px; /* espaço entre os botões */
+  justify-content: center; /* centraliza horizontalmente os botões */
+  align-items: center; /* centraliza verticalmente */
+  width: 100%; /* ocupa toda a largura do container */
+  padding: 20px 20px;
+  margin: 0 auto; /* centraliza o container, se necessário */
+  border-radius: 20px; /* cantos arredondados */
+  z-index: 1; /* garante que fique acima de outros elementos */
+}
+.homepage .bottons_navegate .process button {
+  all: unset; /* reseta todos os estilos padrão do botão */
+  width: 50vh;
+  height: 24vh;
+  background-color: var(--color-light-50);
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.homepage .bottons_navegate .process button.red_button {
+  background-color: var(--color-red-50); /* fundo vermelho do card */
+}
+.homepage .bottons_navegate .process button.red_button i {
+  color: var(--color-light-50);
+}
+.homepage .bottons_navegate .process button.red_button h2 {
+  color: var(--color-light-50);
+}
+.homepage .bottons_navegate .process i {
+  font-size: 2em;
+  margin-bottom: 8px;
+  color: var(--color-dark-900);
+}
+.homepage .bottons_navegate .process h2 {
+  font-size: 1em;
+  font-weight: 700;
+  text-align: center;
+  color: var(--color-dark-900);
+}
+.homepage .bottons_navegate .process:hover {
+  transform: translateY(-5px); /* levanta o botão ao passar o mouse */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+.homepage .resources {
+  width: 100px;
+  height: 50px;
+  background-color: var(--color-dark-50);
 }/*# sourceMappingURL=inicio.css.map */

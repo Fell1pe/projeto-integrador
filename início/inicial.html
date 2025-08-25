@@ -44,74 +44,118 @@
      </div>
     </header>
 
-    <div id="presentation">
-        <div id="title_presentation">
-        <h1>Bem vindo ao</h1>
-        <h2>Orí</h2>
-        </div>
-        <img src="/login/IMG/Logo.png" alt="">
+
+                <div id="presentation">
+                        <div id="title_presentation">
+                            <h1>Bem vindo</h1>
+                        </div>
+                        <div id="footer_presentation">
+                            <h2>Orí</h2>
+                        </div>
+
+                </div>
+
+            <div id="nav_bar">
+
+                <!-- Barra de busca -->
+                <div id="search_bar">
+                        <input type="text" class="search_input" placeholder="busque por advogados    ">
+                    <button type="submit">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+
+            </div>
+
+    <!-- espaço para rolagem -->
+    <div class="scroll_space">
     </div>
 
 
-         <div id="nav_bar">
-        <!-- Barra de busca -->
+    <div class="homepage">
+     
+        <div class="user" id="userElement">
+            <img src="user.jpg" alt="Usuário" class="avatar" />
+            <span class="username">Fellipe</span>
 
-        <!-- <div id="search_bar">
-            <input type="text" placeholder="Pesquisar...">
-            <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-        </div> -->
-
-        <!-- Botão de notificações -->
-         
-        <!-- <div id="notification_button">
-            <button type="button">🔔</button>
-        </div> -->
-        
-        <!-- Avatar do usuário -->
-        <!-- <div id="user_avatar">
-            <img src="avatar.png" alt="Avatar do Usuário">
+            <div class="dropdown" id="dropdown">
+                
+                    <a href="#">Meu Perfil</a>
+                    <a href="#">Configurações</a>
+                    <a href="#">Sair</a>
+                    
+            </div>
         </div>
-     </div>
-    <div id="user">
-        <img class="user.img" src="user.png" alt="Usuário">
-        <span class="user.name"></span> -->
-        
-        <!-- criar css dessa aba ems formato de pílula e com animação em evento de click -->
 
-        <!-- Criar as váriaveis js para essa aplicação -->
-        <div id="dropdown">
-            <!-- <button onclick=""></button> -->
-            <!-- <a href=""><button>Meu usuário</button></a> -->
-        </div>
-    </div>
+ 
 
-<!-- fazer css da aba de pesquisa -->
+        <!-- escrever código daqui para baixo na aba de homepage
+           -->
+     <div class="pagina_inicial">
 
-    <!-- <div class="search">
-        <i id="search_icon"></i>
-        <h2 id="search_camp">pesquise</h2>
-    </div> -->
+        <div class="bottons_navegate">
 
-    <!-- fazer css do options e animação de esmaecer nos buttons -->
-<!-- 
-    <div id="options">
-        <a href="">
-        <button>Seus direitos <i id="icon_options"></i>
-        </button>
+                <!-- Início "Seus direitos" -->
 
-        </a>
-        <a href="">
-        <button>Fazer Denúncia <i id="icon_options"></i>
-        </button>
-        </a>
+                <div class="process">
+                    <button href=""> <!-- adicionar link "Processos"--> 
+                            <i class="fa-solid fa-book"></i>
+                            <h2>Processos</h2>
+                        </a>
+                    </button>
+                </div>
 
-        <a href="">
-        <button>Processos <i id="icon_options"></i>
-        </button>
-        </a>
-    </div> -->
+                <!-- Início "Fazer denúncias"-->
+                <div class="process">
+                    <button href="", class="red_button"> <!-- adicionar link "Denúncias"--> 
+                            <i class="fa-solid fa-plus"></i>
+                            <h2>Fazer denúncias agora</h2>
+                        </a>
+                    </button>
+                </div>
+             <!-- Fim "Fazer denúncias"-->
     
+        
+    
+                <!-- Início "Histórico"-->
+                <div class="process">
+                    <button href=""> <!-- adicionar link "historico"--> 
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <h2>Histórico</h2>
+                        </a>
+                    </button>
+        </div>
+                <!-- Fim "Histórico"-->
+    </div>
 
+            <div class="resources">
+
+                <h1>Recursos e comunidades</h1>
+                
+                <div id="info">
+                    
+                    <h2>Conheça seus direitos e leis</h2>
+                    <p>
+                        informações e guias
+                    </p>
+                </div>
+                <div id="info">
+                    <h2>Comunidade</h2>
+                    <p>Conecte-se a outras pessoas</p>
+                </div>
+                <div id="info">]
+
+                    <h2>Blog</h2>
+                    <p>artigos e notícias</p>
+                </div>
+
+
+            </div>
+
+</div>
+       
+          
+ 
 
     <script src="/js/inicio.js"></script>
 </body>

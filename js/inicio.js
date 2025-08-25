@@ -1,18 +1,60 @@
-const menu = document.getElementById('head'); //cria constante para o cabeçalho//
+        const menu = document.getElementById('head');
+        const presentation = document.querySelector('#presentation');
+        const h1 = document.querySelector('#presentation h1');
+        const h2 = document.querySelector('#footer_presentation h2');
+        const searchBar = document.getElementById('search_bar');
+        const homepage = document.querySelector('.homepage');
+        const s_space = document.querySelector('.scroll_space');
+        const userDiv = document.querySelector('.user');
 
-menu.addEventListener('mouseenter', () => {
-    menu.style.left = '0'; //ao passar o mouse, o cabeçalho se torna visível//
-});
-
-menu.addEventListener('mouseleave', () => {
-    menu.style.left = '-50px'; //ao retirar o mouse, o cabeçalho se oculta//
-});
+          let presentationHidden = false;
 
 
 
-//cria função de pesquisa//
+        menu.addEventListener('mouseenter', () => {
+            menu.style.left = '0';
+        });
 
-const search = () => {
-    const query = document.querySelector('#search_bar input').value;
-    console.log('Pesquisar:', query);
-};
+        menu.addEventListener('mouseleave', () => {
+            menu.style.left = '-50px';
+        });
+
+        // Animação inicial quando a página carrega
+        window.addEventListener('load', () => {
+            presentation.classList.add('show');
+            h1.classList.add('show');
+            h2.classList.add('show');
+        });
+
+
+        window.addEventListener('scroll', () => {
+
+            let scrollPosition = window.scrollY || window.pageYOffset;
+
+
+            if (scrollPosition > 50 && !presentationHidden) {
+                presentationHidden = true;
+
+                presentation.classList.add('retract');
+
+                setTimeout(() => {
+                    presentation.classList.add('hidden');
+                    s_space.classList.add('hidden');
+                }, 300); // Tempo para a animação de retração completar
+
+                searchBar.classList.add('fixed');
+
+                setTimeout(() => {
+                    homepage.classList.add('visible');
+                }, 1000);
+
+                setTimeout(() => {
+                    userDiv.classList.add('show_user');
+                }, 1200);
+            }
+        })
+
+        
+        userDiv.addEventListener('click', () => {
+        userDiv.classList.toggle('active');
+        });
