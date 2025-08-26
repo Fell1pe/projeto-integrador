@@ -255,7 +255,6 @@ body {
   opacity: 0; /* define a opacidade inicial como 0 */
   transform: translateY(50px); /* desloca o container para baixo */
   transition: opacity 0.8s ease, transform 0.8s ease; /* adiciona transição */
-  /* Efeito de fade-in com leve movimento */
 }
 .homepage.visible {
   display: block; /* torna o container visível */
@@ -349,9 +348,6 @@ body {
   border-radius: 20px; /* cantos arredondados */
   z-index: 1; /* garante que fique acima de outros elementos */
 }
-.homepage .bottons_navegate .process {
-  transition: transform 0.5s ease, box-shadow 0.5s ease;
-}
 .homepage .bottons_navegate .process button {
   all: unset; /* reseta todos os estilos padrão do botão */
   width: 50vh;
@@ -391,87 +387,7 @@ body {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 .homepage .resources {
-  background-color: var(--color-light-50);
-  border-radius: 50px;
-  padding: 40px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  max-width: 170vh;
-  height: 30vh;
-  min-height: 40vh;
-  margin: 0 auto;
-  position: relative;
-  box-shadow: 2px 7px 10px rgba(0, 0, 0, 0.1);
-  margin-bottom: 40px;
-}
-.homepage .resources h1 {
-  font-family: "Manrope", sans-serif;
-  font-size: 1.8em;
-  font-weight: bold;
-  align-self: flex-start;
-  margin: 10px 0 20px 10px;
-  color: var(--color-dark-900);
-}
-.homepage .resources .infos {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 35px;
-  width: 100%;
-}
-.homepage .resources .infos .info {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 20px;
+  width: 100px;
+  height: 50px;
   background-color: var(--color-dark-50);
-  border-radius: 45px;
-  width: 100%;
-  max-width: 48vh;
-  min-height: 20vh;
-  padding: 20px 30px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-}
-.homepage .resources .infos .info:hover {
-  transform: translateY(-5px);
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
-}
-.homepage .resources .infos .info i {
-  font-size: 2.3em;
-  color: var(--color-red-50);
-  flex-shrink: 0;
-}
-.homepage .resources .infos .info .info_content {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 5px;
-}
-.homepage .resources .infos .info h2 {
-  font-size: 1.2em;
-  color: var(--color-red-50);
-  font-family: "Manrope", sans-serif;
-  margin: 0;
-}
-.homepage .resources .infos .info p {
-  font-family: "Manrope", sans-serif;
-  font-size: 1em;
-  color: var(--color-dark-900);
-  margin: 0;
-}
-.homepage .fade-in {
-  opacity: 0; /* começa invisível */
-  transform: translateY(20px); /* deslocamento inicial para baixo */
-  transition: opacity 1s ease, transform 1.2s ease; /* transição suave */
-}
-.homepage .fade-in.show {
-  opacity: 1; /* visível */
-  transform: translateY(0); /* posição original */
-}/*# sourceMappingURL=inicio.css.map */
+}/*# sourceMappingURL=inicio-DESKTOP-02CESEC.css.map */

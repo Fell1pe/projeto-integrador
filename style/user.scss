@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Faustina:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root{
+    --color-light-50: #F0EBD1;
+    --color-dark-50: #BAAF95;
+    --color-dark-100: #624129;
+    --color-dark-900: #241B18;
+
+    --color-red-50: #730000;
+} /* pré define cores usadas no css */
+
+    $writing: "Manrope", sans-serif;
+    $title: "Faustina", serif;
+
+*{
+    font-family: "Manrope", sans-serif; /* adiciona fonte na base do arquivo */
+    margin: 0; /* coloca margem da página como 0 */
+    padding: 0; /* coloca padding da página como 0 */
+    box-sizing: border-box; /* fomata o border box universal do projeto */
+}
+body{
+    background-color: var(--color-dark-50); /* define a cor de fundo do body */
+    min-height: 100vh; /* define a altura mínima do body como 100% da altura da viewport */
+}
+
+#head {
+    background-color: var(--color-light-50); /* define a cor de fundo do cabeçalho */
+    display: flex; /* adiciona customização de display = flex */
+    justify-content: space-between; /* adiciona espaçamento entre os itens do flex */
+    flex-direction: column; /* organiza os itens do flex em coluna */
+    align-items: center; /* alinha os itens do flex verticalmente ao centro */
+    position: fixed; /* fixa o cabeçalho no topo da página */
+    top: 0; /* garante que o cabeçalho fique no topo */
+    left: -50px; /* garante que o cabeçalho fique alinhado à esquerda */
+    width: 50px; //define tamanho vertical dos itens do cabeçalho//
+    height: 100vh; //define altura do cabeçalho com tamanho em vh proporcional a altura da tela//
+    align-items: center; /* alinha os itens do flex horizontalmente ao centro */
+    padding: 30px 30px; //afasta todo o canteudo do cabeçalho no topo e em baixo 20px e aos lados 10px//
+    border-radius: 0 20px 20px 0; /* adiciona borda arredondada ao cabeçalho */
+    z-index: 1000; /* garante que o cabeçalho fique acima de outros elementos */
+    transition: left 0.3s ease; /* adiciona uma transição suave para a propriedade left */
+
+
+    /* Ao passar o mouse sobre a barra lateral */
+    &.hover{
+        left: 0; /* coloca o header novamente como aba lateral visível */
+    }
+
+    #head_itens{
+
+        display: flex; /* adiciona customização de display = flex */
+        flex-direction: column; /* organiza os itens do flex em coluna */
+        align-items: center; /* alinha os itens do flex verticalmente ao centro */
+        gap: 10px; /* adiciona espaçamento entre os itens do flex */
+
+
+        h2{
+            color: var(--color-dark-900); /* define a cor do texto do título */
+            font-family: $writing; /* define a fonte do título */
+            text-align: center; /* centraliza o texto do título */
+            position: relative; /* permite posicionar o título em relação ao seu contêiner */
+
+            &::after {
+                content: ""; /* cria um pseudo-elemento vazio */
+                display: block; /* exibe o pseudo-elemento como um bloco */
+                width: 25px; /* define a largura do pseudo-elemento */
+                height: 2px; /* define a altura do pseudo-elemento */
+                background-color: var(--color-dark-100); /* define a cor de fundo do pseudo-elemento */
+                margin: 5px auto 0; /* centraliza o pseudo-elemento horizontalmente */
+                border-radius: 3px; /* adiciona borda arredondada ao pseudo-elemento */
+            }
+        }
+
+            #head_svg {
+                img{
+                    width: 28px; /* define a largura da imagem do logo */
+                    height: auto; /* define a altura da imagem do logo */
+                    margin-bottom: 20px; /* adiciona margem inferior para espaçamento */
+                }
+            }
+
+
+            #head_links a {
+                background-color: white; /* define a cor de fundo dos links */
+                color: black; /* define a cor do texto dos links */
+                width: 40px; /* define a largura dos links */
+                height: 40px; /* define a altura dos links */
+                border-radius: 10px; /* torna os links circulares */
+                text-decoration: none; /* remove o sublinhado dos links */ 
+                font-size: 20px; /* define o tamanho da fonte dos links */
+                transition: 0.2s; /* adiciona uma transição suave ao passar o mouse */
+                display: flex; /* adiciona customização de display = flex */
+                flex-direction: column; /* organiza os itens do flex em coluna */
+                align-items: center; /* alinha os itens do flex horizontalmente ao centro */
+                justify-content: center; /* alinha os itens do flex verticalmente ao centro */
+        
+
+                //meche nos atributos após a transition//
+                &:hover {
+                    background-color: var(--color-dark-100); /* muda a cor de fundo ao passar o mouse */
+                    color: var(--color-dark-100); /* muda a cor do texto ao passar o mouse */
+
+                    i {
+                        color: white; /* muda a cor do ícone ao passar o mouse */
+                    }
+                }
+
+            }
+
+            #head_links {
+                display: flex; /* adiciona customização de display = flex */
+                flex-direction: column; /* organiza os itens do flex em coluna */
+                align-items: center; /* alinha os itens do flex verticalmente ao centro */
+                border-radius: 20px; /* adiciona borda arredondada aos links */
+                gap: 20px; /* adiciona espaçamento entre os links */
+                padding: 10px 8px; /* adiciona padding superior e inferior de 10px */
+            }
+    }
+
+    #low {
+        display: flex; /* adiciona customização de display = flex */
+        flex-direction: column;
+        align-items: center; /* alinha os itens do flex verticalmente ao centro */
+        gap: 20px; /* adiciona espaçamento entre os itens do flex */
+   
+
+    #config, #exit {
+        display: flex; /* adiciona customização de display = flex */
+        align-items: center; /* alinha os itens do flex verticalmente ao centro */
+        border: none; /* remove a borda dos botões */
+        justify-content: center; /* alinha os itens do flex horizontalmente ao centro */
+        width: 30px; /* define a largura dos botões */
+        height: 30px; /* define a altura dos botões */
+        border-radius: 50%; /* torna os botões circulares */
+        background-color: var(--color-dark-100); /* define a cor de fundo dos botões */
+        color: white; /* define a cor do texto dos botões */
+        cursor: pointer; /* muda o cursor para indicar que é clicável */
+        transition: background-color 0.3s ease; /* adiciona uma transição suave ao passar o mouse */
+
+        &:hover {
+            background-color: var(--color-dark-900); /* muda a cor de fundo ao passar o mouse */
+        }
+
+    }
+    }
+}
