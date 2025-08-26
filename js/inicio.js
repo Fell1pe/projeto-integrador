@@ -58,3 +58,23 @@
         userDiv.addEventListener('click', () => {
         userDiv.classList.toggle('active');
         });
+
+
+        const fadeInElements = document.querySelectorAll('.resources, .bottons_navegate');
+
+
+        // Adiciona a classe inicial que prepara a animação
+fadeInElements.forEach(el => el.classList.add('fade-in'));
+
+// Cria o observador para ativar a animação quando aparecer na tela
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.classList.add('show'); // adiciona a classe que faz o fade-in
+            observer.unobserve(entry.target);    // para de observar para não repetir
+        }
+    });
+}, { threshold: 0.1 });
+
+// Observa todos os elementos selecionados
+fadeInElements.forEach(el => observer.observe(el));
