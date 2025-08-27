@@ -441,26 +441,34 @@ body {
 .homepage .resources .infos .info .info_content_back {
   opacity: 0;
   transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Transição suave */
 }
 .homepage .resources .infos .info:hover {
   transform: translateY(-5px);
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
 }
 .homepage .resources .infos .info.animate {
-  animation: slide-info 1.5s ease forwards;
-}
-.homepage .resources .infos .info.expand {
-  animation: expand-info 1s ease forwards;
+  animation: slide-info 2s ease forwards;
 }
 .homepage .resources .infos .info.show_back .info_content {
-  opacity: 0;
+  opacity: 0; /* Esconde o conteúdo frontal */
 }
 .homepage .resources .infos .info.show_back .info_content_back {
-  opacity: 1;
-  transform: translateY(0);
-  border-radius: 45px;
-  padding: 20px 30px;
-  transition: all 0.5s ease;
+  opacity: 1; /* Mostra o conteúdo de trás */
+  transform: translateY(0); /* Volta à posição original */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+}
+.homepage .resources .infos .info.show_back .info_content_back h2 {
+  color: var(--color-red-50);
+  margin-bottom: 10px;
+}
+.homepage .resources .infos .info.show_back .info_content_back p {
+  color: var(--color-dark-900);
+  line-height: 1.4;
 }
 .homepage .resources .infos .info i {
   font-size: 2.3em;
@@ -503,8 +511,8 @@ body {
     transform: translateY(0) translateX(0) scale(1);
     background-color: var(--color-dark-50);
   }
-  40% {
-    transform: translateY(100vh) translateX(0) scale(1);
+  30% {
+    transform: translateY(50vh) translateX(0) scale(1);
     background-color: var(--color-dark-50);
   }
   60% {
@@ -514,10 +522,13 @@ body {
   80% {
     transform: translateY(100vh) translateX(-50%) scale(1);
     background-color: var(--color-dark-50);
+    width: 80vw; /* Largura final (80% da tela) */
+    height: 90vh; /* Altura final */
   }
   100% {
-    transform: translateY(100vh) translateX(-50%) scale(4);
+    transform: translateY(100vh) translateX(-50%) scale(1.2);
     background-color: white;
-    transition: all 3s ease;
+    width: 80vw; /* Largura final (80% da tela) */
+    height: 90vh; /* Altura final */
   }
 }/*# sourceMappingURL=inicio.css.map */

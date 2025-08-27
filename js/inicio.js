@@ -81,20 +81,18 @@ const observer = new IntersectionObserver((entries) => {
 fadeInElements.forEach(el => observer.observe(el));
 
 document.addEventListener("DOMContentLoaded", () => {
-    
+    const infos = document.querySelectorAll('.info');
+
     infos.forEach(info => {
         info.addEventListener('click', () => {
-            // evita clicar de novo no meio da animação
-
-            if (info.classList.contains("animate"))return;
-
-            // fase 1:slide
+            // Adiciona a classe 'animate' para iniciar a animação de slide
             info.classList.add("animate");
 
-            // fase 2: mostra o conteúdo novo
+            // Após a animação de slide, adiciona a classe 'show_back' e 'expand'
             setTimeout(() => {
                 info.classList.add("show_back");
-            }, 2500); // 2s = tempo do slide + tempo do expand
+            }, 1000); // Tempo correspondente à duração da animação de slide (1.5s)
         });
+    });
 });
-});
+
