@@ -6,6 +6,7 @@
         const homepage = document.querySelector('.homepage');
         const s_space = document.querySelector('.scroll_space');
         const userDiv = document.querySelector('.user');
+        const infos = document.querySelectorAll('.info');
 
           let presentationHidden = false;
 
@@ -78,3 +79,22 @@ const observer = new IntersectionObserver((entries) => {
 
 // Observa todos os elementos selecionados
 fadeInElements.forEach(el => observer.observe(el));
+
+document.addEventListener("DOMContentLoaded", () => {
+    
+    infos.forEach(info => {
+        info.addEventListener('click', () => {
+            // evita clicar de novo no meio da animação
+
+            if (info.classList.contains("animate"))return;
+
+            // fase 1:slide
+            info.classList.add("animate");
+
+            // fase 2: mostra o conteúdo novo
+            setTimeout(() => {
+                info.classList.add("show_back");
+            }, 2500); // 2s = tempo do slide + tempo do expand
+        });
+});
+});

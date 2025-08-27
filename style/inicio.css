@@ -255,7 +255,6 @@ body {
   opacity: 0; /* define a opacidade inicial como 0 */
   transform: translateY(50px); /* desloca o container para baixo */
   transition: opacity 0.8s ease, transform 0.8s ease; /* adiciona transição */
-  /* Efeito de fade-in com leve movimento */
 }
 .homepage.visible {
   display: block; /* torna o container visível */
@@ -277,6 +276,7 @@ body {
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.24);
   transform: translateX(-50vh);
   opacity: 0;
+  z-index: 2;
   /* Balão de opções oculto inicialmente */
   /* Quando clicar, mostra o balão */
 }
@@ -347,7 +347,7 @@ body {
   padding: 20px 20px;
   margin: 0 auto; /* centraliza o container, se necessário */
   border-radius: 20px; /* cantos arredondados */
-  z-index: 1; /* garante que fique acima de outros elementos */
+  z-index: -1;
 }
 .homepage .bottons_navegate .process {
   transition: transform 0.5s ease, box-shadow 0.5s ease;
@@ -432,15 +432,35 @@ body {
   background-color: var(--color-dark-50);
   border-radius: 45px;
   width: 100%;
-  max-width: 48vh;
+  max-width: 75vh;
   min-height: 20vh;
   padding: 20px 30px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
 }
+.homepage .resources .infos .info .info_content_back {
+  opacity: 0;
+  transform: translateY(20px);
+}
 .homepage .resources .infos .info:hover {
   transform: translateY(-5px);
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+.homepage .resources .infos .info.animate {
+  animation: slide-info 1.5s ease forwards;
+}
+.homepage .resources .infos .info.expand {
+  animation: expand-info 1s ease forwards;
+}
+.homepage .resources .infos .info.show_back .info_content {
+  opacity: 0;
+}
+.homepage .resources .infos .info.show_back .info_content_back {
+  opacity: 1;
+  transform: translateY(0);
+  border-radius: 45px;
+  padding: 20px 30px;
+  transition: all 0.5s ease;
 }
 .homepage .resources .infos .info i {
   font-size: 2.3em;
@@ -466,12 +486,38 @@ body {
   color: var(--color-dark-900);
   margin: 0;
 }
-.homepage .fade-in {
+
+.fade-in {
   opacity: 0; /* começa invisível */
   transform: translateY(20px); /* deslocamento inicial para baixo */
   transition: opacity 1s ease, transform 1.2s ease; /* transição suave */
 }
-.homepage .fade-in.show {
+
+.fade-in.show {
   opacity: 1; /* visível */
   transform: translateY(0); /* posição original */
+}
+
+@keyframes slide-info {
+  0% {
+    transform: translateY(0) translateX(0) scale(1);
+    background-color: var(--color-dark-50);
+  }
+  40% {
+    transform: translateY(100vh) translateX(0) scale(1);
+    background-color: var(--color-dark-50);
+  }
+  60% {
+    transform: translateY(100vh) translateX(-30%) scale(1);
+    background-color: var(--color-dark-50);
+  }
+  80% {
+    transform: translateY(100vh) translateX(-50%) scale(1);
+    background-color: var(--color-dark-50);
+  }
+  100% {
+    transform: translateY(100vh) translateX(-50%) scale(4);
+    background-color: white;
+    transition: all 3s ease;
+  }
 }/*# sourceMappingURL=inicio.css.map */
