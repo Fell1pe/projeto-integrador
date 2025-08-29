@@ -558,17 +558,14 @@ body {
 }
 @keyframes expand-info {
   0% {
-    transform: rotate(0deg);
     max-width: 30vh;
     min-height: 20vh;
   }
   50% {
-    transform: rotate(360deg);
     max-width: 75vh;
     min-height: 60vh;
   }
   100% {
-    transform: rotate(0deg);
     max-width: 130vh;
     min-height: 80vh;
   }
