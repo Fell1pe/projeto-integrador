@@ -80,34 +80,22 @@ const observer = new IntersectionObserver((entries) => {
 // Observa todos os elementos selecionados
 fadeInElements.forEach(el => observer.observe(el));
 
-infos.forEach(info => {
-    info.addEventListener('click', () => {
-        if (document.querySelector(".info.animate")) return;
+document.addEventListener("DOMContentLoaded", () => {
+    
+    infos.forEach(info => {
+        info.addEventListener('click', () => {
+            // evita clicar de novo no meio da animação
 
-        // fase 1
-        info.classList.add("animate");
+            if (info.classList.contains("animate"))return;
 
-        // listener ANTES de adicionar o animate
-        const onFirstAnimationEnd = () => {
-            // cria placeholder e define absolute
-            const placeholder = document.createElement("div");
-            placeholder.classList.add("placeholder");
-            info.parentNode.insertBefore(placeholder, info);
+            // fase 1:slide
+            info.classList.add("animate");
 
-            info.style.position = "absolute";
-            info.style.left = placeholder.offsetLeft + "px";
-            info.style.top = placeholder.offsetTop + "px";
- 
-
-            // ativa as próximas animações
-            info.classList.add("continue");
-
-            // remove o listener
-            info.removeEventListener('animationend', onFirstAnimationEnd);
-
-        };
-
-        info.addEventListener('animationend', onFirstAnimationEnd);
-    });
+            // fase 2: mostra o conteúdo novo
+            setTimeout(() => {
+                info.classList.add("show_back");
+            }, 2500); // 2s = tempo do slide + tempo do expand
+        });
+});
 });
 

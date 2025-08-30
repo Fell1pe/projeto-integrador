@@ -430,7 +430,18 @@ body {
   min-height: 20vh;
   visibility: hidden;
 }
-.homepage .resources .infos .info {
+.homepage .resources .infos .info_flex {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  border-radius: 45px;
+  width: 100%;
+  max-width: 75vh;
+  min-height: 20vh;
+}
+.homepage .resources .infos .info_flex .info {
+  position: absolute;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -444,31 +455,25 @@ body {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
 }
-.homepage .resources .infos .info .info_content_back {
+.homepage .resources .infos .info_flex .info .info_content_back {
   opacity: 0;
   transform: translateY(20px);
 }
-.homepage .resources .infos .info:hover {
+.homepage .resources .infos .info_flex .info:hover {
   transform: translateY(-5px);
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
 }
-.homepage .resources .infos .info.animate {
-  animation: slide-info 0.7s ease forwards;
+.homepage .resources .infos .info_flex .info.animate {
+  animation: slide-info 0.7s ease forwards, slideX-info 0.7s ease forwards 0.7s, cube-info 0.5s ease forwards 1.2s, expand-info 1s ease forwards 1.7s;
 }
-.homepage .resources .infos .info.animate.continue {
-  animation: slideX-info 0.7s ease forwards, cube-info 0.5s ease forwards 0.7s, expand-info 1s ease forwards 1.2s;
-}
-.homepage .resources .infos .info.reverse-animate {
+.homepage .resources .infos .info_flex .info.reverse-animate {
   animation: slide-info 1s ease forwards;
   animation-direction: reverse;
 }
-.homepage .resources .infos .info.reverse-animate.reverse-continue {
-  animation: expand-info 1.7s ease reverse, cube-info 1s ease reverse 1.7s, slideX-info 1s ease reverse 2.7s, slide-info 1s ease reverse 3.7s;
-}
-.homepage .resources .infos .info.show_back .info_content {
+.homepage .resources .infos .info_flex .info.show_back .info_content {
   opacity: 0;
 }
-.homepage .resources .infos .info.show_back .info_content_back {
+.homepage .resources .infos .info_flex .info.show_back .info_content_back {
   opacity: 1;
   transform: translateY(0) scale(0.125);
   display: flex;
@@ -480,36 +485,36 @@ body {
   height: 20vh;
   transition: all 0.5s ease;
 }
-.homepage .resources .infos .info.show_back .info_content_back h2 {
+.homepage .resources .infos .info_flex .info.show_back .info_content_back h2 {
   font-size: 4em;
   color: var(--color-red-50);
   margin-bottom: 10px;
 }
-.homepage .resources .infos .info.show_back .info_content_back p {
+.homepage .resources .infos .info_flex .info.show_back .info_content_back p {
   font-size: 2.5em;
   color: var(--color-dark-900);
   line-height: 1.4;
   max-width: 600px;
 }
-.homepage .resources .infos .info i {
+.homepage .resources .infos .info_flex .info i {
   font-size: 2.3em;
   color: var(--color-red-50);
   flex-shrink: 0;
 }
-.homepage .resources .infos .info .info_content {
+.homepage .resources .infos .info_flex .info .info_content {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
   gap: 5px;
 }
-.homepage .resources .infos .info h2 {
+.homepage .resources .infos .info_flex .info h2 {
   font-size: 1.2em;
   color: var(--color-red-50);
   font-family: "Manrope", sans-serif;
   margin: 0;
 }
-.homepage .resources .infos .info p {
+.homepage .resources .infos .info_flex .info p {
   font-family: "Manrope", sans-serif;
   font-size: 1em;
   color: var(--color-dark-900);
