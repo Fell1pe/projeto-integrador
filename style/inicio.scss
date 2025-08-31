@@ -557,8 +557,12 @@
                 }
 
                 &.reverse-animate {
-                    animation: slide-info 1s ease forwards;
-                    animation-direction: reverse;
+                     animation: 
+                    expand-info-reverse 1s ease,
+                    cube-info-reverse 0.5s ease 1s,
+                    slideX-info-reverse 0.7s ease 1.5s,
+                    slide-info-reverse 0.7s ease 2.2s; /* Add backwards or forwards as needed */
+}
 
                     }
                     
@@ -630,7 +634,7 @@
     }
 
             
-        }
+
         .fade-in {
             opacity: 0;                      /* começa invisível */
             transform: translateY(20px);     /* deslocamento inicial para baixo */
@@ -691,3 +695,76 @@
                 min-height: 80vh;
             }
         }
+
+        /*animação de reverse*/
+    @keyframes slide-info-reverse {
+    0% {
+        transform: translate(0, 28vh);
+        background-color: white;
+    }
+    100% {
+        transform: translate(0, 0);
+        background-color: var(--color-dark-50);
+    }
+}
+
+@keyframes slideX-info-reverse {
+    0% {
+        transform: translate(-50%, 28vh);
+        left: 50%;
+        background-color: white;
+    }
+    100% {
+        transform: translate(0, 28vh);
+        background-color: white;
+    }
+}
+
+@keyframes cube-info-reverse {
+    0% {
+        /* A posição final de slideX-info */
+        transform: translate(-50%, 28vh);
+        left: 50%;
+        /* O estado final da animação original */
+        max-width: 30vh;
+        min-height: 20vh;
+        background-color: white;
+    }
+    100% {
+        /* O estado inicial da animação original */
+        transform: translate(-50%, 28vh);
+        left: 50%;
+        max-width: 75vh;
+        min-height: 20vh;
+        background-color: white;
+    }
+}
+
+@keyframes expand-info-reverse {
+    0% {
+        /* A posição final de slideX-info */
+        transform: translate(-50%, 28vh);
+        left: 50%;
+        /* O estado final da animação original */
+        max-width: 130vh;
+        min-height: 80vh;
+        background-color: white;
+    }
+
+    50% {
+        transform: translate(-50%, 28vh);
+        left: 50%;
+        max-width: 75vh;
+        min-height: 60vh;
+        background-color: white;
+    }
+
+    100% {
+        /* O estado inicial da animação original */
+        transform: translate(-50%, 28vh);
+        left: 50%;
+        max-width: 30vh;
+        min-height: 20vh;
+        background-color: white;
+    }
+}

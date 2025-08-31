@@ -80,30 +80,62 @@ const observer = new IntersectionObserver((entries) => {
 // Observa todos os elementos selecionados
 fadeInElements.forEach(el => observer.observe(el));
 
+let ativo = null; // guarda qual está animando/aberto
+
 infos.forEach(info => {
-    info.addEventListener('click', () => {
-        if (document.querySelector(".info.animate")) return;
+  info.addEventListener('click', () => {
+    // se já tem outro aberto e não é o mesmo -> não deixa abrir
+    if (ativo && ativo !== info) return;
 
-        // fase 1
-        info.classList.add("animate");
+    // se já está em reverse, ignora até terminar
+    if (info.classList.contains("reverse-animate")) return;
 
-        // listener ANTES de adicionar o animate
-        const onFirstAnimationEnd = () => {
-            // cria placeholder e define absolute
-            const placeholder = document.createElement("div");
-            placeholder.classList.add("placeholder");
-            info.parentNode.insertBefore(placeholder, info);
-
-            info.style.left = placeholder.offsetLeft + "px";
-            info.style.top = placeholder.offsetTop + "px";
+    if (info.classList.contains("reverse")) {
+      // Inicia o reverse
+      info.classList.add("reverse-animate");
+      info.classList.remove("animate");
  
+      setTimeout(() => {
+        info.addEventListener('animationend', () => {
 
-            // remove o listener
-            info.removeEventListener('animationend', onFirstAnimationEnd);
 
-        };
+        info.classList.remove("reverse-animate");
+        info.classList.remove("reverse");
 
-        info.addEventListener('animationend', onFirstAnimationEnd);
-    });
+        if (info.placeholder) {
+          info.placeholder.remove();
+          info.placeholder = null;
+        }
+
+        info.style.left = "";
+        info.style.top = "";
+
+        ativo = null; // 🔑 libera para poder abrir de novo
+      }, { once: true });
+      }, 2500)
+      
+
+    } else {
+      // fase 1
+      info.classList.add("animate");
+
+      const onFirstAnimationEnd = () => {
+        const placeholder = document.createElement("div");
+        placeholder.classList.add("placeholder");
+        info.parentNode.insertBefore(placeholder, info);
+
+        info.style.left = placeholder.offsetLeft + "px";
+        info.style.top = placeholder.offsetTop + "px";
+
+        info.classList.add("reverse");
+        info.placeholder = placeholder;
+
+        ativo = info; // 🔑 marca qual está aberto
+
+        info.removeEventListener("animationend", onFirstAnimationEnd);
+      };
+
+      info.addEventListener("animationend", onFirstAnimationEnd);
+    }
+  });
 });
-
