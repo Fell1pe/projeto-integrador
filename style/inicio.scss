@@ -542,6 +542,7 @@
                 cursor: pointer;
 
                 .info_content_back {
+                    display: none;
                     opacity: 0;
                     transform: translateY(20px);
                 }
@@ -573,31 +574,125 @@
                         opacity: 0;
                     }
                     .info_content_back {
-                        opacity: 1;
-                        transform: translateY(0) scale(0.125);
-                        display: flex;
+                        display: block;
                         flex-direction: column;
-                        align-items: center;
-                        text-align: center;
-                        gap: 20px;
-                        width: 130vh;
-                        height: 20vh;
-                        transition: all 0.5s ease;
+                        opacity: 1;
+                        width: 110vh;
+                        position: absolute;
+                        left: 50%; /* Move a esquerda do elemento para 50% do pai */
+                        bottom: 33%;
+                        transform: translate(-50%, 20vh); /* Ajusta o elemento pela metade do seu próprio tamanho */
 
+                        .start {
+                            width: 50%;
+                            letter-spacing: 6px;
+                            position: absolute;
+                            left: 30px;
+                            top: -13px;
 
-                        h2{
-                            font-size: 4em; // aumenta o texto já que será reduzido pelo scale
-                            color: var(--color-red-50);
-                            margin-bottom: 10px;
+                            h1 {
+                                font-size: 9em;
+                                font-family: $title;
+                                color: var(--color-light-50);
+                                text-shadow: 0 10px 6px rgba(0, 0, 0, 0.3);
+                            }
+                            h2 {
+                                font-size: 9em;
+                                position: absolute;
+                                top: 60%;
+                                left: 7%;
+                                z-index: 2;
+                                text-shadow: 0 10px 6px rgba(0, 0, 0, 0.3);
+                                font-family: $title;
+                                color: var(--color-red-50);
+                            }
                         }
 
-                        p {
-                            font-size: 2.5em; // aumenta o texto já que será reduzido pelo scale
-                            color: var(--color-dark-900);
-                            line-height: 1.4;
-                            max-width: 600px;
+                        .first_part {
+                            position: relative;
+                            margin-left: auto;
+                            display: flex;
+                            flex-direction: column;
+                            gap: 8px;
+                            width: 40%;
+                            padding: 0 0 15px 0;
+
+                            h2{
+                                font-size: 2.7em;
+                                font-family: $title;
+                                margin-bottom: 10px;
+                                color: var(--color-red-50);
+                            }
+                            p {
+                                font-size: 1.2em;
+                                font-family: $writing;
+                                color: var(--color-dark-900);
+                            }
+                            li {
+                                font-size: 1.2em;
+                                font-family: $writing;
+                                color: var(--color-dark-900);
+                                margin-left: 10px;
+                            }
+                        }
+                        .second_part {
+                            position:relative;
+                            width: 100%;
+                            padding: 10px 0 -5px 0;
+
+                            p {
+                                font-size: 1.2em;
+                                margin: 13px;
+                                font-family: $writing;
+                                color: var(--color-dark-900);
+                            }
+                              li {
+                                font-size: 1.2em;
+                                font-family: $writing;
+                                color: var(--color-dark-900);
+                                margin-left: 20px;
+                            }
                         }
                         
+                        .third_part {
+                            position: relative;
+                            width: 100%;
+                            display: flex;
+                            flex-direction: column;
+                            gap: 8px;
+                    
+
+                            h2 {
+                                font-size: 2.7em;
+                                font-family: $title;
+                                margin-bottom: 10px;
+                                color: var(--color-red-50);
+                                margin-left: auto;
+                            }
+
+                            p {
+                                font-size: 1.2em;
+                                font-family: $writing;
+                                color: var(--color-dark-900);
+                            }
+                              li {
+                                font-size: 1.2em;
+                                font-family: $writing;
+                                color: var(--color-dark-900);
+                                margin-left: 20px;
+                            }
+                        }
+
+
+                        
+                        
+                
+                    }
+                    i{
+                        position: absolute;
+                        transform: translateY(-33vh);
+                        left: 5vh;
+                        transition: all 0.3s ease;
                     }
                 }
                 

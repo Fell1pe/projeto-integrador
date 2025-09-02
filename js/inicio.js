@@ -80,43 +80,38 @@ const observer = new IntersectionObserver((entries) => {
 // Observa todos os elementos selecionados
 fadeInElements.forEach(el => observer.observe(el));
 
-let ativo = null; // guarda qual está animando/aberto
+let ativo = null;
 
 infos.forEach(info => {
   info.addEventListener('click', () => {
-    // se já tem outro aberto e não é o mesmo -> não deixa abrir
     if (ativo && ativo !== info) return;
-
-    // se já está em reverse, ignora até terminar
     if (info.classList.contains("reverse-animate")) return;
 
+    // ⬇️ pega o wrapper certo onde o SCSS espera .show_back
+    const wrapper = info.closest('.info_flex');
+
     if (info.classList.contains("reverse")) {
-      // Inicia o reverse
       info.classList.add("reverse-animate");
       info.classList.remove("animate");
- 
+      // volta pra frente no início do reverse
+      wrapper?.classList.remove("show_back");
+
       setTimeout(() => {
         info.addEventListener('animationend', () => {
+          info.classList.remove("reverse-animate");
+          info.classList.remove("reverse");
 
-
-        info.classList.remove("reverse-animate");
-        info.classList.remove("reverse");
-
-        if (info.placeholder) {
-          info.placeholder.remove();
-          info.placeholder = null;
-        }
-
-        info.style.left = "";
-        info.style.top = "";
-
-        ativo = null; // 🔑 libera para poder abrir de novo
-      }, { once: true });
-      }, 2500)
-      
+          if (info.placeholder) {
+            info.placeholder.remove();
+            info.placeholder = null;
+          }
+          info.style.left = "";
+          info.style.top = "";
+          ativo = null;
+        }, { once: true });
+      }, 2500);
 
     } else {
-      // fase 1
       info.classList.add("animate");
 
       const onFirstAnimationEnd = () => {
@@ -130,7 +125,11 @@ infos.forEach(info => {
         info.classList.add("reverse");
         info.placeholder = placeholder;
 
-        ativo = info; // 🔑 marca qual está aberto
+        ativo = info;
+
+      setTimeout(() => {
+              wrapper?.classList.add("show_back");
+            }, 2100);
 
         info.removeEventListener("animationend", onFirstAnimationEnd);
       };
