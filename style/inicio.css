@@ -296,21 +296,26 @@ body {
   font-weight: bold;
   opacity: 0.9;
 }
+.homepage .user .focus-effect {
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
 .homepage .user .dropdown {
   position: absolute;
   top: 100%;
-  right: -70px;
+  right: -15vh;
   max-height: 0;
   overflow: hidden;
   opacity: 0;
   pointer-events: none;
   flex-direction: column;
   background-color: white;
-  border-radius: 50px;
+  border-radius: 20px;
   padding: 0 20px;
   gap: 10px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-  min-width: 200px;
+  min-width: 300px;
   z-index: 1000;
   transition: all 0.3s ease-in-out;
 }
@@ -323,7 +328,7 @@ body {
   border: none;
   text-align: left;
   padding: 5px 10px;
-  border-radius: 20px;
+  border-radius: 50px;
   transition: background 1s ease;
 }
 .homepage .user .dropdown a:hover, .homepage .user .dropdown button:hover {
@@ -347,21 +352,20 @@ body {
   padding: 20px 20px;
   margin: 0 auto; /* centraliza o container, se necessário */
   border-radius: 20px; /* cantos arredondados */
-  z-index: -1;
+  z-index: 1;
 }
 .homepage .bottons_navegate .process {
   transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 .homepage .bottons_navegate .process button {
-  all: unset; /* reseta todos os estilos padrão do botão */
   width: 50vh;
   height: 24vh;
   background-color: var(--color-light-50);
   border: none;
   border-radius: 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
   display: flex;
+  cursor: pointer;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -388,7 +392,7 @@ body {
 }
 .homepage .bottons_navegate .process:hover {
   transform: translateY(-5px); /* levanta o botão ao passar o mouse */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* adiciona sombra ao passar o mouse */
 }
 .homepage .resources {
   background-color: var(--color-light-50);
@@ -456,9 +460,13 @@ body {
   cursor: pointer;
 }
 .homepage .resources .infos .info_flex .info .info_content_back {
-  display: none;
+  position: absolute;
+  left: 50%;
+  bottom: 33%;
+  width: 110vh;
+  transform: translate(-50%, 40vh);
   opacity: 0;
-  transform: translateY(20px);
+  visibility: hidden;
 }
 .homepage .resources .infos .info_flex .info:hover {
   transform: translateY(-5px);
@@ -474,14 +482,15 @@ body {
   opacity: 0;
 }
 .homepage .resources .infos .info_flex.show_back .info_content_back {
-  display: block;
+  visibility: visible;
   flex-direction: column;
   opacity: 1;
   width: 110vh;
   position: absolute;
   left: 50%; /* Move a esquerda do elemento para 50% do pai */
-  bottom: 33%;
+  bottom: 33%; /* Move o topo do elemento para 50% do pai */
   transform: translate(-50%, 20vh); /* Ajusta o elemento pela metade do seu próprio tamanho */
+  transition: all 0.9s ease;
 }
 .homepage .resources .infos .info_flex.show_back .info_content_back .start {
   width: 50%;
@@ -493,8 +502,7 @@ body {
 .homepage .resources .infos .info_flex.show_back .info_content_back .start h1 {
   font-size: 9em;
   font-family: "Faustina", serif;
-  color: var(--color-light-50);
-  text-shadow: 0 10px 6px rgba(0, 0, 0, 0.3);
+  color: var(--color-red-50);
 }
 .homepage .resources .infos .info_flex.show_back .info_content_back .start h2 {
   font-size: 9em;
@@ -502,7 +510,6 @@ body {
   top: 60%;
   left: 7%;
   z-index: 2;
-  text-shadow: 0 10px 6px rgba(0, 0, 0, 0.3);
   font-family: "Faustina", serif;
   color: var(--color-red-50);
 }

@@ -355,23 +355,29 @@
                 font-weight: bold;
                 opacity: 0.9;
             }
+            .focus-effect {
+            box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2);
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+            }
+            
 
             /* Balão de opções oculto inicialmente */
             .dropdown {
                     position: absolute;
                     top: 100%; 
-                    right: -70px;
+                    right: -15vh;
                     max-height: 0;        // permite animar altura
                     overflow: hidden;     // esconde conteúdo excedente
                     opacity: 0;
                     pointer-events: none; 
                     flex-direction: column;
                     background-color: white;
-                    border-radius: 50px;
+                    border-radius: 20px;
                     padding: 0 20px;      // padding vertical será animado via max-height
                     gap: 10px;
                     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-                    min-width: 200px;
+                    min-width: 300px;
                     z-index: 1000;        // aumenta z-index
                     transition: all 0.3s ease-in-out;  // animação suave de altura e opacidade
 
@@ -384,7 +390,7 @@
                     border: none;
                     text-align: left;
                     padding: 5px 10px;
-                    border-radius: 20px;
+                    border-radius: 50px;
                     transition: background 1s ease;
 
                     &:hover {
@@ -415,22 +421,22 @@
             padding: 20px 20px;
             margin: 0 auto; /* centraliza o container, se necessário */
             border-radius: 20px; /* cantos arredondados */
-            z-index: -1;
+            z-index: 1; 
+            
 
         .process {
 
             transition: transform 0.5s ease, box-shadow 0.5s ease;
 
             button {
-                    all: unset; /* reseta todos os estilos padrão do botão */
                     width: 50vh; // largura aproximada do card
                     height: 24vh; // altura aproximada
                     background-color:  var(--color-light-50); // fundo vermelho do card
                     border: none;
                     border-radius: 20px; // cantos arredondados
                     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-                    cursor: pointer;
                     display: flex;
+                    cursor: pointer;
                     flex-direction: column;
                     justify-content: center;
                     align-items: center;
@@ -464,10 +470,10 @@
                 color: var(--color-dark-900);
             }
 
-            &:hover{
-                transform: translateY(-5px); /* levanta o botão ao passar o mouse */
-                box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-            }
+             &:hover{
+                    transform: translateY(-5px); /* levanta o botão ao passar o mouse */
+                    box-shadow: 0 8px 20px rgba(0,0,0,0.2); /* adiciona sombra ao passar o mouse */
+                    }
         
             }
             }
@@ -542,9 +548,15 @@
                 cursor: pointer;
 
                 .info_content_back {
-                    display: none;
+                    position: absolute;
+                    left: 50%;
+                    bottom: 33%;
+                    width: 110vh;
+
+                    transform: translate(-50%, 40vh); // começa mais baixo
                     opacity: 0;
-                    transform: translateY(20px);
+                    visibility: hidden;
+
                 }
 
                 &:hover {
@@ -574,14 +586,16 @@
                         opacity: 0;
                     }
                     .info_content_back {
-                        display: block;
+                        visibility: visible;
                         flex-direction: column;
                         opacity: 1;
                         width: 110vh;
                         position: absolute;
                         left: 50%; /* Move a esquerda do elemento para 50% do pai */
-                        bottom: 33%;
+                        bottom: 33%; /* Move o topo do elemento para 50% do pai */
                         transform: translate(-50%, 20vh); /* Ajusta o elemento pela metade do seu próprio tamanho */
+                        
+                    transition: all 0.9s ease;
 
                         .start {
                             width: 50%;
@@ -593,8 +607,7 @@
                             h1 {
                                 font-size: 9em;
                                 font-family: $title;
-                                color: var(--color-light-50);
-                                text-shadow: 0 10px 6px rgba(0, 0, 0, 0.3);
+                                color: var(--color-red-50);
                             }
                             h2 {
                                 font-size: 9em;
@@ -602,7 +615,6 @@
                                 top: 60%;
                                 left: 7%;
                                 z-index: 2;
-                                text-shadow: 0 10px 6px rgba(0, 0, 0, 0.3);
                                 font-family: $title;
                                 color: var(--color-red-50);
                             }
