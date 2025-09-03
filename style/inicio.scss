@@ -753,6 +753,7 @@
             transform: translateX(-50%);
             left: 50%;
             justify-content: center;
+            z-index: -1;
 
 
             .line{
@@ -796,8 +797,13 @@
                 gap: 10px;
 
                 img{
-                    width: 100%;
+                    width: 83%;
                     height: auto;
+                    border-radius: 30px;
+                    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+                    position: relative;
+                    transform: translateX(-50%);
+                    left: 50%;
                 }
 
                 p{
@@ -805,6 +811,183 @@
                         font-family: $writing;
                         color: var(--color-dark-900);
                         margin: 0;
+                        width: 50%;
+                        padding: 40px 20px 40px 40px;
+                        position: relative;
+                }
+
+                #graficoRosca {
+                    width: 45vh !important;
+                    height: auto !important;
+                    position: absolute;
+                    right: 15vh;
+                    top: 127vh;
+                }
+            }
+
+            .content_2{
+
+                p{
+                    font-size: 1.2em;
+                    font-family: $writing;
+                    color: var(--color-dark-900);
+                    padding: 20px 0 60px 30px;
+                    position: relative;
+                    width: 90%;
+                }
+                h2{
+                    font-size: 2em;
+                    font-family: $writing;
+                    color: var(--color-dark-900);
+                    padding: 10px 10px 0 20px;
+                    position: relative;
+                }
+            }
+
+            .content_3{
+                p{
+                    font-size: 1.2em;
+                    font-family: $writing;
+                    color: var(--color-dark-900);
+                    padding: 20px 0 60px 30px;
+                    position: relative;
+                    width: 90%;
+                }
+
+                .meaning {
+                    background-color: var(--color-dark-50);
+                    width: 60%;
+                    border-radius: 3px;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    position: relative;
+                    bottom: 30px;
+                    left: 20px;
+
+
+                    p{
+                        font-size: 1.2em;
+                        font-family: $writing;
+                        font-weight: lighter;
+                        padding: 15px 15px 15px 0;
+                        margin-left: auto;
+                    }
+                    .line_to_line{
+                        border: 1px solid var(--color-red-50);
+                        background-color: var(--color-dark-100);
+                        position: relative;
+                        z-index: 2;
+                        height: 35px;
+                        width: 2px;
+                        margin-left: auto;
+                    }
+                }
+                h2{
+                    font-size: 2em;
+                    font-family: $writing;
+                    color: var(--color-dark-900);
+                    padding: 10px 10px 0 20px;
+                    position: relative;
+                }
+                img {
+                    width: 80%;
+                    height: auto;
+                    padding: 20px 0 10px 30px;
+                    position: relative;
+                }
+
+                .subtitle {
+                    font-size: 1em;
+                    font-family: $writing;
+                    color: var(--color-dark-900);
+                    opacity: 0.9;
+                    padding: 0 0 60px 30px;
+                    position: relative;
+                }
+            }
+            .content_4{
+                p{
+                    font-size: 1.2em;
+                    font-family: $writing;
+                    color: var(--color-dark-900);
+                    padding: 20px 0 30px 30px;
+                    position: relative;
+                    width: 90%;
+                }
+
+                h2{
+                    font-size: 2em;
+                    font-family: $writing;
+                    color: var(--color-dark-900);
+                    padding: 10px 10px 0 20px;
+                    position: relative;
+                }
+
+                img{
+                    width: 60%;
+                    height: auto;
+                    padding: 20px 0 10px 30px;
+                    position: relative;
+                }
+                .end{
+                    font-size: 1.2em;
+                    font-family: $writing;
+                    color: var(--color-dark-900);
+                    padding: 20px 0 60px 30px;
+                    position: relative;
+                }
+            }
+            .content_5{
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+                p{
+                    font-size: 1.2em;
+                    font-family: $writing;
+                    color: var(--color-dark-900);
+                    padding: 20px 0 60px 30px;
+                    position: relative;
+                    width: 90%;
+                }
+
+                h2{
+                    font-size: 2em;
+                    font-family: $writing;
+                    color: var(--color-dark-900);
+                    padding: 10px 10px 0 20px;
+                    position: relative;
+                }
+
+                .space{
+                    background-color: var(--color-dark-50);
+                    width: 90%;
+                    height: 50%;
+                    border-radius: 4px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    position: relative;
+                    left: 50%;
+                    transform: translateX(-50%);
+
+                    p{
+                        font-size: 1em;
+                        font-family: $writing;
+                        color: var(--color-dark-900);
+                        opacity: 0.9;
+                    }
+                }
+            }
+
+            .content_6{
+                p {
+                    font-size: 1.2em;
+                    font-family: $writing;
+                    color: var(--color-dark-900);
+                    padding: 20px 0 30px 30px;
+                    position: relative;
+                    width: 90%;
                 }
             }
         }
