@@ -611,6 +611,9 @@ body {
   color: var(--color-dark-900);
   margin: 0;
 }
+.homepage .ori {
+  display: none; /* esconde o elemento */
+}
 
 .fade-in {
   opacity: 0; /* começa invisível */
