@@ -461,10 +461,9 @@ body {
 }
 .homepage .resources .infos .info_flex .info .info_content_back {
   position: absolute;
+  width: 100%;
   left: 50%;
-  bottom: 33%;
-  width: 110vh;
-  transform: translate(-50%, 40vh);
+  transform: translate(-70%, 30vh);
   opacity: 0;
   visibility: hidden;
 }
@@ -485,11 +484,9 @@ body {
   visibility: visible;
   flex-direction: column;
   opacity: 1;
-  width: 110vh;
-  position: absolute;
-  left: 50%; /* Move a esquerda do elemento para 50% do pai */
-  bottom: 33%; /* Move o topo do elemento para 50% do pai */
-  transform: translate(-50%, 20vh); /* Ajusta o elemento pela metade do seu próprio tamanho */
+  width: 100%;
+  position: relative;
+  transform: translate(-70%, 0);
   transition: all 0.9s ease;
 }
 .homepage .resources .infos .info_flex.show_back .info_content_back .start {
@@ -632,6 +629,11 @@ body {
   background-color: var(--color-red-50);
   margin: 10px 0;
 }
+.homepage .ori .title {
+  animation: ace 2s linear;
+  animation-timeline: view();
+  animation-range: entry 0% exit 100%;
+}
 .homepage .ori .title h2 {
   font-size: 2em;
   font-family: "Manrope", sans-serif;
@@ -671,7 +673,13 @@ body {
   transform: translateX(-50%);
   left: 50%;
 }
-.homepage .ori .content_1 p {
+.homepage .ori .content_1 .obs {
+  display: flex;
+  flex-direction: row;
+  padding: 40px 20px 40px 20px;
+  gap: 45vh;
+}
+.homepage .ori .content_1 .obs p {
   font-size: 1.2em;
   font-family: "Manrope", sans-serif;
   color: var(--color-dark-900);
@@ -680,12 +688,10 @@ body {
   padding: 40px 20px 40px 40px;
   position: relative;
 }
-.homepage .ori .content_1 #graficoRosca {
-  width: 45vh !important;
+.homepage .ori .content_1 .obs #graficoRosca {
+  width: 17% !important;
   height: auto !important;
-  position: absolute;
-  right: 15vh;
-  top: 127vh;
+  position: relative;
 }
 .homepage .ori .content_2 p {
   font-size: 1.2em;
@@ -729,11 +735,11 @@ body {
   margin-left: auto;
 }
 .homepage .ori .content_3 .meaning .line_to_line {
-  border: 1px solid var(--color-red-50);
+  border: 1.5px solid var(--color-red-50);
   background-color: var(--color-dark-100);
   position: relative;
   z-index: 2;
-  height: 35px;
+  height: 30px;
   width: 2px;
   margin-left: auto;
 }
@@ -807,22 +813,30 @@ body {
   position: relative;
 }
 .homepage .ori .content_5 .space {
-  background-color: var(--color-dark-50);
+  background-color: rgba(189, 189, 189, 0.5019607843);
   width: 90%;
   height: 50%;
-  border-radius: 4px;
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: left;
   position: relative;
   left: 50%;
   transform: translateX(-50%);
 }
 .homepage .ori .content_5 .space p {
-  font-size: 1em;
+  font-size: 1.2em;
   font-family: "Manrope", sans-serif;
   color: var(--color-dark-900);
-  opacity: 0.9;
+  width: 90%;
+  height: auto;
+}
+.homepage .ori .content_5 .space h3 {
+  font-size: 1.6em;
+  font-weight: bold;
+  font-family: "Manrope", sans-serif;
+  color: var(--color-dark-900);
+  padding: 20px 0 0 20px;
 }
 .homepage .ori .content_6 p {
   font-size: 1.2em;
@@ -952,5 +966,15 @@ body {
     max-width: 30vh;
     min-height: 20vh;
     background-color: white;
+  }
+}
+@keyframes ace {
+  from {
+    opacity: 0;
+    scale: 0.5;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
   }
 }/*# sourceMappingURL=inicio.css.map */

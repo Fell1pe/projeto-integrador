@@ -549,11 +549,10 @@
 
                 .info_content_back {
                     position: absolute;
+                    width: 100%;
                     left: 50%;
-                    bottom: 33%;
-                    width: 110vh;
 
-                    transform: translate(-50%, 40vh); // começa mais baixo
+                    transform: translate(-70%, 30vh); // começa mais baixo
                     opacity: 0;
                     visibility: hidden;
 
@@ -589,11 +588,10 @@
                         visibility: visible;
                         flex-direction: column;
                         opacity: 1;
-                        width: 110vh;
-                        position: absolute;
-                        left: 50%; /* Move a esquerda do elemento para 50% do pai */
-                        bottom: 33%; /* Move o topo do elemento para 50% do pai */
-                        transform: translate(-50%, 20vh); /* Ajusta o elemento pela metade do seu próprio tamanho */
+                        width: 100%;
+                        position: relative;
+                        transform: translate(-70%, 0); // volta para posição original
+
                         
                     transition: all 0.9s ease;
 
@@ -764,6 +762,11 @@
             }
 
             .title{
+
+                animation: ace 2s linear;
+                animation-timeline: view();
+                animation-range: entry 0% exit 100%;
+
                 h2{
                     font-size: 2em;
                     font-family: $writing;
@@ -806,7 +809,13 @@
                     left: 50%;
                 }
 
-                p{
+                .obs{
+
+                    display: flex;
+                    flex-direction: row;
+                    padding: 40px 20px 40px 20px;
+                    gap: 45vh;
+                    p{
                         font-size: 1.2em;
                         font-family: $writing;
                         color: var(--color-dark-900);
@@ -817,12 +826,14 @@
                 }
 
                 #graficoRosca {
-                    width: 45vh !important;
+                    width: 17% !important;
                     height: auto !important;
-                    position: absolute;
-                    right: 15vh;
-                    top: 127vh;
+                    position: relative;
+                   
                 }
+
+                }
+                
             }
 
             .content_2{
@@ -874,11 +885,11 @@
                         margin-left: auto;
                     }
                     .line_to_line{
-                        border: 1px solid var(--color-red-50);
+                        border: 1.5px solid var(--color-red-50);
                         background-color: var(--color-dark-100);
                         position: relative;
                         z-index: 2;
-                        height: 35px;
+                        height: 30px;
                         width: 2px;
                         margin-left: auto;
                     }
@@ -960,22 +971,30 @@
                 }
 
                 .space{
-                    background-color: var(--color-dark-50);
+                    background-color: #BDBDBD80;
                     width: 90%;
                     height: 50%;
-                    border-radius: 4px;
+                    border-radius: 5px;
                     display: flex;
                     flex-direction: column;
-                    align-items: flex-start;
+                    align-items: left;
                     position: relative;
                     left: 50%;
                     transform: translateX(-50%);
 
                     p{
-                        font-size: 1em;
+                        font-size: 1.2em;
                         font-family: $writing;
                         color: var(--color-dark-900);
-                        opacity: 0.9;
+                        width: 90%;
+                        height: auto;
+                    }
+                    h3{
+                        font-size: 1.6em;
+                        font-weight: bold;
+                        font-family: $writing;
+                        color: var(--color-dark-900);
+                        padding: 20px 0 0 20px;
                     }
                 }
             }
@@ -1128,3 +1147,14 @@
         background-color: white;
     }
 }
+
+        @keyframes ace {
+           from {
+            opacity: 0;
+            scale: 0.5;
+           }
+           to {
+            opacity: 1;
+            scale: 1;
+           }
+        }
