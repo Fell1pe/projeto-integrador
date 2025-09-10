@@ -10,6 +10,10 @@
         --color-red-50: #730000;
     } /* pré define cores usadas no css */
 
+        
+      
+
+
         $writing: "Manrope", sans-serif;
         $title: "Faustina", serif;
 
@@ -762,11 +766,6 @@
             }
 
             .title{
-
-                animation: ace 2s linear;
-                animation-timeline: view();
-                animation-range: entry 0% exit 100%;
-
                 h2{
                     font-size: 2em;
                     font-family: $writing;
@@ -776,6 +775,10 @@
                     margin-right: auto;
                     width: 50%;
                     padding: 10px 0 20px 20px;
+
+                    
+                  @include expandir;
+
                 }
                 img{
                     width: 55px;
@@ -783,6 +786,9 @@
                     position: absolute;
                     left: 142vh;
                     top: 40px;
+
+                    @include expandir;
+
                 }
                 p{
                     font-size: 1.3em;
@@ -791,6 +797,9 @@
                     margin: 1;
                     width: 80%;
                     padding: 10px 0 0 20px;
+
+                    @include expandir;
+
                 }
             }
 
