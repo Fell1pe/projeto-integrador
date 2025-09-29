@@ -117,4 +117,148 @@ body {
 }
 #head #low #config:hover, #head #low #exit:hover {
   background-color: var(--color-dark-900); /* muda a cor de fundo ao passar o mouse */
+}
+
+#user {
+  background-color: var(--color-light-50);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 40px;
+  width: 90%;
+  height: 180vh;
+  top: 20px;
+  bottom: 30px;
+}
+#user h4 {
+  font-family: "Manrope", sans-serif;
+  font-size: 2.5em;
+  font-weight: bold;
+  color: var(--color-red-50);
+  position: absolute;
+  left: 5%;
+  top: 3%;
+}
+#user button {
+  background-color: var(--color-dark-50);
+  border-radius: 25px;
+  width: 200px;
+  text-align: center;
+  color: white;
+  position: absolute;
+  right: 5%;
+  top: 3%;
+  border: none;
+  font-family: "Manrope", sans-serif;
+  font-size: 2.3em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.5 ease;
+}
+#user button:hover {
+  transition: all 0.5 ease;
+  transform: scale(1.05);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+  background-color: white;
+  color: var(--color-dark-900);
+}
+#user .it {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  padding: 15vh 0 0 0;
+}
+#user .it .photo {
+  color: var(--color-red-50);
+  text-decoration: underline;
+}
+#user .it img {
+  width: 180px;
+  height: auto;
+}
+#user .it h3 {
+  font-family: "Manrope", sans-serif;
+  padding: 20px 0 40px 0;
+  font-size: 1.3em;
+}
+#user #dados {
+  background-color: var(--color-dark-50);
+  border-radius: 40px;
+  width: 80%;
+  height: 60%;
+}
+#user #dados #name {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  top: 20px;
+}
+#user #dados #name .esquerda {
+  position: relative;
+  left: 50px;
+  top: 10px;
+}
+#user #dados #name .esquerda h3 {
+  font-family: "Manrope", sans-serif;
+  font-size: 1.8em;
+  position: relative;
+}
+#user #dados #name .direita {
+  top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  right: -200px;
+  gap: 15px;
+}
+#user #dados #name .direita p {
+  font-family: "Manrope", sans-serif;
+  font-size: 1.4em;
+}
+#user #dados #name .line {
+  background-color: var(--color-light-50);
+  width: 4px;
+  height: 20vh;
+  position: relative;
+  right: 10%;
+  top: -20px;
+}
+#user #dados .feature {
+  background-color: var(--color-light-50);
+  width: 4px;
+  height: 75vh;
+  position: relative;
+  right: -37%;
+  top: -126px;
+}
+#user #dados .corner {
+  top: -600px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  right: -427px;
+  gap: 29px;
+}
+#user #dados .left {
+  position: relative;
+  left: 50px;
+  top: 10px;
+}
+#user #dados hr {
+  background-color: var(--color-light-50);
+  height: 4px;
+  border: none;
+}
+#user #dados h1 {
+  font-family: "Manrope", sans-serif;
+  font-size: 1.8em;
+  font-weight: bold;
+  position: relative;
+  padding: 20px 0 20px 50px;
 }/*# sourceMappingURL=user.css.map */

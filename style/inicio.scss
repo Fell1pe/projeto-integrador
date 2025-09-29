@@ -9,11 +9,6 @@
 
         --color-red-50: #730000;
     } /* pré define cores usadas no css */
-
-        
-      
-
-
         $writing: "Manrope", sans-serif;
         $title: "Faustina", serif;
 
@@ -339,12 +334,21 @@
             transform: translateX(-50vh);
             opacity: 0;
             z-index: 2;
+            transition: all 0.15s ease;
 
 
             &.show_user{
                 opacity: 1;
                 transition: all 1s ease;
                 transform: translateX(0);
+            }
+
+            &:hover {
+                box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2);
+                transform: translateX(-2px);
+            }
+            &.show_user:hover {
+                transform: translateX(0) translateY(-2px);
             }
 
             .avatar {
@@ -547,20 +551,22 @@
                 width: 100%;
                 max-width: 75vh;
                 min-height: 20vh;
+                height: auto;
                 padding: 20px 30px;
                 transition: transform 0.3s ease, box-shadow 0.3s ease;
                 cursor: pointer;
 
                 .info_content_back {
-                    position: absolute;
-                    width: 100%;
-                    left: 50%;
+                position: absolute;       // mantém absoluto ANTES de aparecer
+                width: 100%;
+                left: 50%;
+                transform: translate(-70%, 30vh); // começa escondido
+                opacity: 0;
+                visibility: hidden;
+                transition: none; // adiciona transição
+                box-sizing: border-box;
+            }
 
-                    transform: translate(-70%, 30vh); // começa mais baixo
-                    opacity: 0;
-                    visibility: hidden;
-
-                }
 
                 &:hover {
                     transform: translateY(-5px);
@@ -585,53 +591,59 @@
                 
 
                 &.show_back {
-                    .info_content {
-                        opacity: 0;
-                    }
-                    .info_content_back {
-                        visibility: visible;
-                        flex-direction: column;
-                        opacity: 1;
-                        width: 100%;
+                    i {
                         position: relative;
-                        transform: translate(-70%, 0); // volta para posição original
+                        top: 25%;
+                    }
+                    
+                    .info_content {
+                    opacity: 0;
+                }
+                .info_content_back {
+                    position: relative;     // agora participa do fluxo normal
+                    transform: translate(-12% , 0);
+                    inset: 0;
+                    margin: auto;
+                    visibility: visible;
+                    opacity: 1;
+                    display: flex;
+                    flex-direction: column;
+                    inset: 0;
+                    transition: all 0.5s ease;
+                    text-align: justify;
+                
+                        .isso{
+                            display: flex;
+                            flex-direction: row;
+                            margin-top: 20px;
+                            
 
-                        
-                    transition: all 0.9s ease;
-
-                        .start {
-                            width: 50%;
-                            letter-spacing: 6px;
-                            position: absolute;
-                            left: 30px;
-                            top: -13px;
+                            .start {
+                            position: relative;
+                            gap: 10px;
+                            left: 0;
+                            top: 13vh;
+                            text-align: start;
 
                             h1 {
-                                font-size: 9em;
-                                font-family: $title;
-                                color: var(--color-red-50);
-                            }
-                            h2 {
-                                font-size: 9em;
-                                position: absolute;
-                                top: 60%;
-                                left: 7%;
-                                z-index: 2;
+                                font-size: 5em;
                                 font-family: $title;
                                 color: var(--color-red-50);
                             }
                         }
 
+                            
                         .first_part {
                             position: relative;
                             margin-left: auto;
                             display: flex;
                             flex-direction: column;
                             gap: 8px;
-                            width: 40%;
+                            width: 70%;
                             padding: 0 0 15px 0;
 
                             h2{
+                                text-align: left;
                                 font-size: 2.7em;
                                 font-family: $title;
                                 margin-bottom: 10px;
@@ -649,6 +661,8 @@
                                 margin-left: 10px;
                             }
                         }
+                        }
+
                         .second_part {
                             position:relative;
                             width: 100%;
@@ -674,6 +688,7 @@
                             display: flex;
                             flex-direction: column;
                             gap: 8px;
+                            margin-bottom: 20px;
                     
 
                             h2 {
@@ -766,6 +781,7 @@
             }
 
             .title{
+
                 h2{
                     font-size: 2em;
                     font-family: $writing;
@@ -776,9 +792,6 @@
                     width: 50%;
                     padding: 10px 0 20px 20px;
 
-                    
-                  @include expandir;
-
                 }
                 img{
                     width: 55px;
@@ -787,7 +800,6 @@
                     left: 142vh;
                     top: 40px;
 
-                    @include expandir;
 
                 }
                 p{
@@ -798,7 +810,6 @@
                     width: 80%;
                     padding: 10px 0 0 20px;
 
-                    @include expandir;
 
                 }
             }
@@ -835,10 +846,9 @@
                 }
 
                 #graficoRosca {
-                    width: 17% !important;
-                    height: auto !important;
+                    width: 35% !important;
+                    height: 35% !important;
                     position: relative;
-                   
                 }
 
                 }
@@ -1079,7 +1089,7 @@
             }
 
             100%{
-                max-width: 130vh;
+                max-width: 190vh;
                 min-height: 80vh;
             }
         }
@@ -1156,14 +1166,3 @@
         background-color: white;
     }
 }
-
-        @keyframes ace {
-           from {
-            opacity: 0;
-            scale: 0.5;
-           }
-           to {
-            opacity: 1;
-            scale: 1;
-           }
-        }
