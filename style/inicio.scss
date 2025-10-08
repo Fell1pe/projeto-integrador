@@ -436,6 +436,9 @@
 
             transition: transform 0.5s ease, box-shadow 0.5s ease;
 
+            a{
+                text-decoration: none;
+            }
             button {
                     width: 50vh; // largura aproximada do card
                     height: 24vh; // altura aproximada

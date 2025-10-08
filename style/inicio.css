@@ -365,6 +365,9 @@ body {
 .homepage .bottons_navegate .process {
   transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
+.homepage .bottons_navegate .process a {
+  text-decoration: none;
+}
 .homepage .bottons_navegate .process button {
   width: 50vh;
   height: 24vh;

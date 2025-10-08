@@ -1,0 +1,43 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Faustina:ital,wght@0,300..800;1,300..800&display=swap");
+:root {
+  --color-light-50: #F0EBD1;
+  --color-dark-50: #BAAF95;
+  --color-dark-100: #624129;
+  --color-dark-900: #241B18;
+  --color-red-50: #730000;
+} /* pré define cores usadas no css */
+* {
+  font-family: "Manrope", sans-serif; /* adiciona fonte na base do arquivo */
+  margin: 0; /* coloca margem da página como 0 */
+  padding: 0; /* coloca padding da página como 0 */
+  box-sizing: border-box; /* fomata o border box universal do projeto */
+}
+
+body {
+  background-color: var(--color-dark-50); /* define a cor de fundo do body */
+  min-height: 100vh; /* define a altura mínima do body como 100% da altura da viewport */
+}
+
+#head {
+  background-color: var(--color-light-50); /* define a cor de fundo do cabeçalho */
+  display: flex; /* adiciona customização de display = flex */
+  justify-content: space-between; /* adiciona espaçamento entre os itens do flex */
+  flex-direction: column; /* organiza os itens do flex em coluna */
+  align-items: center; /* alinha os itens do flex verticalmente ao centro */
+  position: fixed; /* fixa o cabeçalho no topo da página */
+  top: 0; /* garante que o cabeçalho fique no topo */
+  left: -50px; /* garante que o cabeçalho fique alinhado à esquerda */
+  width: 50px;
+  height: 100vh;
+  align-items: center; /* alinha os itens do flex horizontalmente ao centro */
+  padding: 30px 30px;
+  border-radius: 0 20px 20px 0; /* adiciona borda arredondada ao cabeçalho */
+  z-index: 1000; /* garante que o cabeçalho fique acima de outros elementos */
+  transition: left 0.3s ease; /* adiciona uma transição suave para a propriedade left */
+  /* Ao passar o mouse sobre a barra lateral */
+}
+#head.hover {
+  left: 0; /* coloca o header novamente como aba lateral visível */
+}/*# sourceMappingURL=contato.css.map */
